@@ -10,9 +10,9 @@ const Navigation = () => {
   function handleDisplayMode(e){
     e.stopPropagation();
   }
-  
+
   return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">Budget App</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -27,7 +27,7 @@ const Navigation = () => {
                   <NavDropdown.Item href="#action/3.2">
                     Another action
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
+                  <NavDropdown.Item href="#action/3.3" >
                   <Form>
                     <Form.Check 
                       type="switch"
