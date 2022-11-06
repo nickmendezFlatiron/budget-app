@@ -79,7 +79,7 @@ const SellingPoints = () => {
                 <Col xs={9}>
                   <h2 className="text-warning text-uppercase">And More!</h2>
                   <h3 className=' overflow'>
-                    Track your expenses and savings over time with user-friendly tools. 
+                    Monitor your spending habits with user-friendly tools. 
                     Customize your reports to display what is important to you.
                   </h3>
                 </Col>

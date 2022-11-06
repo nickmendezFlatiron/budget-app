@@ -20,7 +20,10 @@ const Homepage = () => {
               <br/>
               <h3>Create better spending habits with 5 minutes a day.</h3>
               <br/>
-              <Button variant="warning" sz="lg" className="text-dark fw-bold">START BUDGETING TODAY</Button>
+              <Col className="d-flex gap-3 pb-4">
+                <Button variant="warning" sz="lg" className="text-dark fw-bold">START BUDGETING TODAY</Button>
+                <Button variant="light" sz="lg" className="text-dark fw-bold">LOGIN</Button>
+              </Col>
             </Col>
             <Col >
               <img src={homepageImage} alt="image" className='homepage-image'/>
