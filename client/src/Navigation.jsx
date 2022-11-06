@@ -14,8 +14,8 @@ const Navigation = () => {
   }
 
   return (
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
-        <Container>
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className='px-4'>
+        
           <Navbar.Brand href="/">
             <img src={textLogo} alt="Spend Better Text Logo" className='nav-text-logo'/>
           </Navbar.Brand>
@@ -26,7 +26,7 @@ const Navigation = () => {
               <Nav.Link href="/upload">Upload</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown title="Username" id="collasible-nav-dropdown">
+              <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
                   <NavDropdown.Item href="#action/3.1">Account Settings</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
@@ -48,7 +48,7 @@ const Navigation = () => {
                 </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        
       </Navbar>
   )
 }
