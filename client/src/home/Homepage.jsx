@@ -4,17 +4,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import SellingPoints from './SellingPoints'
 import homepageImage from "../assets/homepage-image.png";
 import textLogo from "../assets/text-logo.png";
 
 const Homepage = () => {
   return (
     
-      <div className="bg-dark text-light">
+      <div className="bg-dark text-light pb-5">
         <Container>
           <Row className="pt-5 justify-content-between" xs={1} md={2}>
-            <Col lg={6} className="">
-              <img src={textLogo} alt="Spend Better text logo" className='homepage-image w-75'/>
+            <Col className="pb-3">
+              <img src={textLogo} alt="Spend Better text logo" className='homepage-image'/>
               <br/>
               <br/>
               <h3>Create better spending habits with 5 minutes a day.</h3>
@@ -24,7 +25,8 @@ const Homepage = () => {
             <Col >
               <img src={homepageImage} alt="image" className='homepage-image'/>
             </Col>
-          </Row>
+          </Row>   
+            <SellingPoints />
         </Container>
       </div>
 
