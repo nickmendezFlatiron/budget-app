@@ -10,3 +10,9 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+
+.homepage-image{
+  width: 100%;
+  height:fit-content;
+  padding-bottom: 10px;
+}
