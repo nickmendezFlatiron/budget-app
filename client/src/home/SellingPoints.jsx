@@ -8,7 +8,7 @@ import Tab from 'react-bootstrap/Tab';
 
 const SellingPoints = () => {
   return (
-    <div className="pt-4 pt-md-5">
+    <div className="pt-4 pt-md-5 m-3 m-sm-0">
     <Tab.Container id="list-group-tabs-example" defaultActiveKey="#goals">
       <Row className="border border-secondary bg-secondary border-4 rounded-3 p-4">
         <Col md={4} lg={3}>

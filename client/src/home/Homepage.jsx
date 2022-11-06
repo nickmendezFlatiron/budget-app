@@ -14,7 +14,7 @@ const Homepage = () => {
       <div className="bg-dark text-light pb-5">
         <Container>
           <Row className="pt-5 justify-content-between" xs={1} md={2}>
-            <Col className="pb-3">
+            <Col className="pb-">
               <img src={textLogo} alt="Spend Better text logo" className='homepage-image'/>
               <br/>
               <br/>
