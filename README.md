@@ -10,3 +10,9 @@ Node Packages
 - react hook form
 - react chart js2
 - react query
+
+COLORS
+-----
+- #01968d
+- #fbc724
+- #fbc724

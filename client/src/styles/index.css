@@ -13,6 +13,12 @@ body {
 
 .homepage-image{
   width: 100%;
-  height:fit-content;
+  height:auto;
   padding-bottom: 10px;
+}
+
+.nav-text-logo {
+  width: 150px;
+  height: auto;
+  padding: 8px;
 }

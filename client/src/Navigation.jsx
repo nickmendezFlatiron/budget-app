@@ -5,6 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 
+import textLogo from "./assets/text-logo.png";
+
 const Navigation = () => {
 
   function handleDisplayMode(e){
@@ -14,7 +16,9 @@ const Navigation = () => {
   return (
       <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Budget App</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src={textLogo} alt="Spend Better Text Logo" className='nav-text-logo'/>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
