@@ -10,6 +10,7 @@ Node Packages
 - react hook form
 - react chart js2
 - react query
+- react-select
 
 COLORS
 -----
