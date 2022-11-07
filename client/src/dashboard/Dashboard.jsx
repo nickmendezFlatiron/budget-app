@@ -43,7 +43,7 @@ const Dashboard = () => {
           <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start ">
             <img src="https://via.placeholder.com/300" alt="Chart" className="rounded-circle"/>
           </Col>
-          <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-lg-0 ">
+          <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-md-0 ">
             <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
               <CategorySelect />
             </div>
@@ -70,9 +70,9 @@ const Dashboard = () => {
           </Col>
         </Row>
         <Row xs={1} md={2} className=" pb-5 mt-3">
-          <Col className="">
-            <div className="widget-margin-small  bg-secondary bg-opacity-25  rounded-3 pt-1">
-              <h4 className="text-center pt-lg-3 ps-lg-3 text-lg-start text-warning">Transactions</h4>
+          <Col className="ps-md-0">
+            <div className="widget-margin-small  bg-white bg-opacity-25 rounded-3 ">
+              <h4 className="text-center pt-3 ps-lg-3 text-lg-start text-warning">Transactions</h4>
               <div className="dash-transaction-table ps-lg-3">
                 <TransactionTable /> 
               </div>
