@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import CategorySelect from './CategorySelect';
 import TransactionTable from './TransactionTable';
+import PieChart from './PieChart';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
