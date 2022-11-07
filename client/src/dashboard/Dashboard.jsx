@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
 
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
@@ -19,7 +20,7 @@ const Dashboard = () => {
   }
   return (
     <div className='bg-dark text-light pb-5'>
-      <Container className="">
+      <Container >
         <Row xs={1} sm={1} md={2} className="pt-3">
           <Col className="text-center text-md-end px-0"> 
             <ToggleButtonGroup type="checkbox" value={timeFrame} onChange={handleTimeFrameChange} className="">
@@ -38,21 +39,24 @@ const Dashboard = () => {
             <h2>November 2022</h2>
           </Col>
         </Row>
-        <Row className="pt-3 text-center gap-gutter" >
-          <Col className="rounded bg-light bg-opacity-25 p-3">
+        <Row className="pt-3" xs={1} md={1} lg={2}>
+          <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start ">
             <img src="https://via.placeholder.com/300" alt="Chart" className="rounded-circle"/>
-          </Col>
-          <Col className="rounded bg-light bg-opacity-25 p-3">
-            <Row className="rounded bg-light bg-opacity-25 p-3 fs-4 m-md-2">
-              <Col>
-                <p className="text-warning">Total Expenses</p>
-                <h1>$1300.24</h1>
-              </Col>
-              <Col>
-                <p className="text-warning">{timeFrame}ly Budget</p>
-                <h1>$2000</h1>
-              </Col>
+            <Row className="border">
+              Hello
             </Row>
+          </Col>
+          <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-lg-0 ">
+              <div className="rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
+                <Col xs={6} lg={`auto`}>
+                  <p className="text-warning text-center">Total Expenses</p>
+                  <h1>$1300.24</h1>
+                </Col>
+                <Col xs={6} lg={`auto`}>
+                  <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                  <h1>$2000</h1>
+                </Col>
+              </div>
           </Col>
         </Row>
       </Container>

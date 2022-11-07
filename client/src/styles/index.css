@@ -46,5 +46,12 @@ body::-webkit-scrollbar {
 }
 
 .gap-gutter {
-  gap: 15px;
+  row-gap: 20px;
 }
+
+@media (min-width: 992px) {
+  .max-content{
+  display: inline-block;
+  width: fit-content;
+  margin: 0 0 0 auto;
+}}
