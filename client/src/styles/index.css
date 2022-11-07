@@ -49,9 +49,16 @@ body::-webkit-scrollbar {
   row-gap: 20px;
 }
 
+/* WIDGETS */
+
 @media (min-width: 992px) {
   .max-content{
   display: inline-block;
   width: fit-content;
   margin: 0 0 0 auto;
+}}
+@media (max-width: 575.98px) {
+  .max-content{
+  margin-right: 5px;
+  margin-left: 5px;
 }}
