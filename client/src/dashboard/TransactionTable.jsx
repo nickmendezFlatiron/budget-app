@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table'
 const TransactionTable = () => {
   return (
    <>
-    <Table hover variant='dark' >
+    <Table hover variant='dark' className='transparent '>
       <tbody className='text-start'>
         <tr className="dash-transaction-td">
           <td>Nov 1</td>

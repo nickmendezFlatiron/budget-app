@@ -14,7 +14,7 @@ const Navigation = () => {
   }
 
   return (
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className='px-4 fs-5' sticky="top">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className='px-4 header-bg fs-5' sticky="top">
           <Navbar.Brand href="/">
             <img src={textLogo} alt="Spend Better Text Logo" className='nav-text-logo'/>
           </Navbar.Brand>

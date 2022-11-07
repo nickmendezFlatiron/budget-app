@@ -57,16 +57,28 @@ const Dashboard = () => {
                 <h1>$2000</h1>
               </Col>
             </div>
-          </Col>
-        </Row>
-        <Row xs={1} md={2} className="border pb-5 mt-3">
-          <Col className="border border-primary">
-            <h4 className="text-center text-lg-start text-warning">Transactions</h4>
-            <div className="dash-transaction-table">
-              <TransactionTable /> 
+            <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
+              <Col xs={6} lg={`auto`}>
+                <p className="text-warning text-center">Total Expenses</p>
+                <h1>$1300.24</h1>
+              </Col>
+              <Col xs={6} lg={`auto`}>
+                <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                <h1>$2000</h1>
+              </Col>
             </div>
           </Col>
-          <Col>
+        </Row>
+        <Row xs={1} md={2} className=" pb-5 mt-3">
+          <Col className="">
+            <div className="widget-margin-small  bg-secondary bg-opacity-25  rounded-3 pt-1">
+              <h4 className="text-center pt-lg-3 ps-lg-3 text-lg-start text-warning">Transactions</h4>
+              <div className="dash-transaction-table ps-lg-3">
+                <TransactionTable /> 
+              </div>
+            </div>
+          </Col>
+          <Col  className="border border-primary">
           
           </Col>
         </Row>

@@ -61,7 +61,14 @@ body::-webkit-scrollbar {
   .max-content{
   margin-right: 5px;
   margin-left: 5px;
-}}
+  }
+  .widget-margin-small {
+    margin-right: 5px!important;
+    margin-left: 5px!important; 
+    
+  }
+
+}
 
 .dash-transaction-table {
   max-height: 250px !important;
@@ -70,13 +77,16 @@ body::-webkit-scrollbar {
   background-color: transparent;;
 }
 .dash-transaction-table::-webkit-scrollbar-thumb{
-  background-color: #01968c57;
+  max-height: 30px !important;
+  background-color: rgba(211, 211, 211, 0.246);
   border-radius: 40px;
 }
-
-
-
 
 .dash-transaction-td {
   border-style : hidden!important;
 }
+
+.transparent tbody td{
+  background-color: transparent!important;
+}
+
