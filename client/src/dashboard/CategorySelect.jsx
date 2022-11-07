@@ -21,7 +21,7 @@ const CategorySelect = () =>
   return (
     <Form.Select
       size="lg"
-      className="bg-light text-warning bg-opacity-25 border-0"
+      className="bg-secondary text-warning bg-opacity-25 border-0"
       onChange={(e)=>{setSelectedOption(e.target.value)}}
     >
       {renderOptions}

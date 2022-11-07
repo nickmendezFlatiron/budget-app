@@ -62,3 +62,21 @@ body::-webkit-scrollbar {
   margin-right: 5px;
   margin-left: 5px;
 }}
+
+.dash-transaction-table {
+  max-height: 250px !important;
+  overflow-y: auto;
+}::-webkit-scrollbar{
+  background-color: transparent;;
+}
+.dash-transaction-table::-webkit-scrollbar-thumb{
+  background-color: #01968c57;
+  border-radius: 40px;
+}
+
+
+
+
+.dash-transaction-td {
+  border-style : hidden!important;
+}
