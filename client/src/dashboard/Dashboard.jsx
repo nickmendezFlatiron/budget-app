@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import CategorySelect from './CategorySelect';
 import TransactionTable from './TransactionTable';
-import PieChart from './PieChart';
+import BudgetDonutChart from './BudgetDonutChart';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -41,8 +41,9 @@ const Dashboard = () => {
           </Col>
         </Row>
         <Row className="pt-3" xs={1} md={2}>
-          <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start ">
-            <img src="https://via.placeholder.com/300" alt="Chart" className="rounded-circle"/>
+          <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start">
+            <BudgetDonutChart />
+            {/* <img src="https://via.placeholder.com/300" alt="Chart" className="rounded-circle"/> */}
           </Col>
           <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-md-0 ">
             <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
@@ -72,7 +73,7 @@ const Dashboard = () => {
         </Row>
         <Row xs={1} md={2} className=" pb-5 mt-3">
           <Col className="ps-md-0">
-            <div className="widget-margin-small  bg-white bg-opacity-25 rounded-3 ">
+            <div className="widget-margin-small  bg-black bg-opacity-25 rounded-3 ">
               <h4 className="text-center pt-3 ps-lg-3 text-lg-start text-warning">Transactions</h4>
               <div className="dash-transaction-table ps-lg-3">
                 <TransactionTable /> 

@@ -36,6 +36,26 @@ const TransactionTable = () => {
           <td>@twitter</td>
           <td>@twitter</td>
         </tr>
+        <tr className="dash-transaction-td">
+          <td>Nov 6</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
+        </tr>
+        <tr className="dash-transaction-td">
+          <td>Nov 6</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
+        </tr>
+        <tr className="dash-transaction-td">
+          <td>Nov 6</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
+        </tr>
+        <tr className="dash-transaction-td">
+          <td>Nov 6</td>
+          <td>@twitter</td>
+          <td>@twitter</td>
+        </tr>
       </tbody>
     </Table>
    </>
