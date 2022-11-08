@@ -74,7 +74,7 @@ const BudgetDonutChart = () => {
         </Col>
         <Col md="auto">
           <input type="checkbox" id="toggle-labels" className='' checked={isLabels} onChange={()=>{toggleLabels(!isLabels)}}/>
-          <label for="toggle-labels" value="Labels" className='ms-1 fs-5'>Labels</label>
+          <label htmlFor="toggle-labels" value="Labels" className='ms-1 fs-5'>Labels</label>
         </Col>
       </Row>
     </div>

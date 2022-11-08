@@ -51,9 +51,9 @@ const GoalsWidget = ({selectedOption}) => {
   const renderGoals = goals.map(goal=>{
     const {date, targetAmount, currentAmount, category, goalTitle} = goal
     return (
-      <li className='goals px-3' key={uuid()}>
-        <div className="d-flex justify-content-between py-2">
-          <div>
+      <li className='goals px-3 ' key={uuid()}>
+        <div className="d-flex justify-content-between py-2 col">
+          <div className="row">
             {goalTitle}
           </div>
           <div>

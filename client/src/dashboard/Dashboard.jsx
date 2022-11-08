@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 // Widgets
 import CategorySelect from './CategorySelect';
-import TransactionTable from './TransactionTable';
+import TransactionTable from './transactions/TransactionTable';
 import BudgetDonutChart from './BudgetDonutChart';
-import GoalsWidget from './GoalsWidget';
+import GoalsWidget from './goals/GoalsWidget';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -11,16 +11,17 @@ import Row from 'react-bootstrap/Row';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
-
-import { sampleData } from '../SampleData';
-
 const Dashboard = () => {
-  const [timeFrame, setTimeFrame] = useState("Month")
+  const [timeFrame, setTimeFrame] = useState("month")
   const [selectedOption, setSelectedOption] = useState('all');
 
   const handleTimeFrameChange = (val,e) => {
     setTimeFrame(e.target.value)
-    console.log({timeFrame, val, e})
+  }
+  const renderDate = () => {
+    const d = new Date(Date())
+    const options = {month: 'long', year: 'numeric'};
+    return new Intl.DateTimeFormat('en-US', options).format(d)
   }
   return (
     <div className='bg-dark text-light pb-5'>
@@ -40,7 +41,7 @@ const Dashboard = () => {
             </ToggleButtonGroup>
           </Col>
           <Col className="text-center text-md-start order-md-first pt-2 pt-md-0  px-0"> 
-            <h2>November 2022</h2>
+            <h2>{renderDate()}</h2>
           </Col>
         </Row>
         <Row className="pt-3" xs={1} md={2}>
@@ -57,7 +58,7 @@ const Dashboard = () => {
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning ">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                <p className="text-warning text-capitalize">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
                 <h1>$2000</h1>
               </Col>
             </div>
@@ -67,7 +68,7 @@ const Dashboard = () => {
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Income</p>
+                <p className="text-warning text-capitalize">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Income</p>
                 <h1>$2000</h1>
               </Col>
             </div>

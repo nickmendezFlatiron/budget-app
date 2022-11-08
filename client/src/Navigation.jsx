@@ -22,7 +22,7 @@ const Navigation = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-              <Nav.Link href="/upload">Upload</Nav.Link>
+              <Nav.Link href="/transactions">Transactions</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
