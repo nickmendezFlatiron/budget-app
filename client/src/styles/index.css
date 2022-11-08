@@ -10,6 +10,9 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+input[type="checkbox"]:checked {
+  accent-color: #fbc724;
+}
 
 .homepage-image{
   width: 100%;

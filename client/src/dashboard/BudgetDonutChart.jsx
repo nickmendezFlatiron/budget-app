@@ -1,8 +1,12 @@
-import React,{useEffect} from 'react'
+import React,{useRef, useState, useEffect} from 'react'
 import { Doughnut } from 'react-chartjs-2';
+
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 
 
 
@@ -35,35 +39,44 @@ export const data = {
 };
 
 const BudgetDonutChart = () => {
-  
-  ChartJS.register(ArcElement, Tooltip, ChartDataLabels);   
-  useEffect(()=>{
+  const chartRef = useRef()
+  const [isLabels, toggleLabels] = useState(true)
+  const [labelOpacity, setLabelOpacity] =useState('0.8')
 
-    return () =>{
-      // ChartJS.destroy()
-      // ChartJS.unregister(ArcElement, Tooltip, ChartDataLabels)
-    }
-  },[])
+  ChartJS.register(ArcElement, Tooltip, ChartDataLabels);   
+  
+  useEffect(()=>{
+    isLabels? setLabelOpacity('0.8'): setLabelOpacity('0'); 
+  },[isLabels])
 
   return (
-    <div className='donut-chart'>
-      <Doughnut 
-        data={data} 
-        options={{
-          plugins: {
-              datalabels: {
-                  formatter: function(value, context) {
-                      return context.chart.data.labels[context.dataIndex];
-                  },
-                  color: "white",
-                  font: {
-                    weight: 'bold',
-                    size: '15px'
+    <div >
+      <Row xs={1} >
+        <Col className='donut-chart px-0'>   
+          <Doughnut 
+            ref={chartRef}
+            data={data} 
+            options={{
+              plugins: {
+                  datalabels: {
+                      formatter: function(value, context) {
+                          return context.chart.data.labels[context.dataIndex];
+                      },
+                      color: `rgba(255, 255, 255, ${labelOpacity})`,
+                      font: {
+                        weight: 'bold',
+                        size: '15px'
+                      }
                   }
-              }
-          }}
-      }
-      />
+              }}
+          }
+          />
+        </Col>
+        <Col md="auto">
+          <input type="checkbox" id="toggle-labels" className='' checked={isLabels} onChange={()=>{toggleLabels(!isLabels)}}/>
+          <label for="toggle-labels" value="Labels" className='ms-1 fs-5'>Labels</label>
+        </Col>
+      </Row>
     </div>
   )
 }
