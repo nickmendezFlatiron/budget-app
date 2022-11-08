@@ -14,6 +14,10 @@ input[type="checkbox"]:checked {
   accent-color: #fbc724;
 }
 
+.glow {
+  box-shadow: 0 4px 8px 0 rgba(192, 192, 192, 0.2);
+}
+
 .homepage-image{
   width: 100%;
   height:auto;
@@ -121,3 +125,11 @@ body::-webkit-scrollbar {
   cursor: pointer;
   background-color: #323539;
 }
+
+.pointer-cursor {
+  cursor: pointer;
+}
+.pointer-cursor label {
+  cursor: pointer;
+}
+

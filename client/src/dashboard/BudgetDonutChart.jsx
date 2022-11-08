@@ -51,7 +51,7 @@ const BudgetDonutChart = () => {
 
   return (
     <div >
-      <Row xs={1} >
+      <Row xs={1} className="justify-content-between">
         <Col className='donut-chart px-0'>   
           <Doughnut 
             ref={chartRef}
@@ -72,9 +72,11 @@ const BudgetDonutChart = () => {
           }
           />
         </Col>
-        <Col md="auto">
-          <input type="checkbox" id="toggle-labels" className='' checked={isLabels} onChange={()=>{toggleLabels(!isLabels)}}/>
-          <label htmlFor="toggle-labels" value="Labels" className='ms-1 fs-5'>Labels</label>
+        <Col md="auto" >
+          <div className="pointer-cursor">
+            <input type="checkbox" id="toggle-labels" className="pointer-cursor" checked={isLabels} onChange={()=>{toggleLabels(!isLabels)}}/>
+            <label htmlFor="toggle-labels" value="Labels" className='ms-1 fs-5 '>Labels</label>
+          </div>
         </Col>
       </Row>
     </div>

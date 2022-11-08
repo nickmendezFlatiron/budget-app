@@ -12,7 +12,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
 const Dashboard = () => {
-  const [timeFrame, setTimeFrame] = useState("month")
+  const [timeFrame, setTimeFrame] = useState("Month")
   const [selectedOption, setSelectedOption] = useState('all');
 
   const handleTimeFrameChange = (val,e) => {
@@ -44,15 +44,15 @@ const Dashboard = () => {
             <h2>{renderDate()}</h2>
           </Col>
         </Row>
-        <Row className="pt-3" xs={1} md={2}>
+        <Row className="pt-3" xs={1} md={2} >
           <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start">
             <BudgetDonutChart />
           </Col>
           <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-md-0 ">
-            <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
+            <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
               <CategorySelect selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
             </div>
-            <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
+            <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
                 <p className="text-warning text-center text-capitalize">{selectedOption} Expenses</p>
                 <h1>$1300.24</h1>
@@ -62,7 +62,7 @@ const Dashboard = () => {
                 <h1>$2000</h1>
               </Col>
             </div>
-            <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
+            <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
                 <p className="text-warning text-center">Total Savings</p>
                 <h1>$1300.24</h1>

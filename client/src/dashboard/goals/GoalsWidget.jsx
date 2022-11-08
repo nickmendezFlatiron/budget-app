@@ -57,13 +57,13 @@ const GoalsWidget = ({selectedOption}) => {
             {goalTitle}
           </div>
           <div>
-            {date}
-          </div>
-          <div>
-          ${currentAmount}/${targetAmount}
+          Target: ${targetAmount}
           </div>
           <div>
            {parseFloat(currentAmount/targetAmount)*100}%
+          </div>
+          <div>
+            {date}
           </div>
         </div>
       </li>

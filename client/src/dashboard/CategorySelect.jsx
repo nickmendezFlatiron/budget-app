@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 const CategorySelect = ({setSelectedOption, selectedOption}) => {
+  
   const options = [
     { value: 'all', label: 'All' },
     { value: 'auto', label: 'Auto' },
@@ -12,7 +13,6 @@ const CategorySelect = ({setSelectedOption, selectedOption}) => {
   ]; 
   function handleChange(e){
     setSelectedOption(e.target.value)
-    e.target.blur()
   }
   const renderOptions = options.map((option) =>{
     return <option value={option.value} key={option.value}>{option.label}</option>
@@ -23,8 +23,6 @@ const CategorySelect = ({setSelectedOption, selectedOption}) => {
       size="lg"
       className="bg-secondary text-warning bg-opacity-25 border-0 category-dropdown"
       onChange={handleChange}
-      // onFocus={(e)=>e.target.size=3}
-      // onBlur={(e)=>e.target.size=1}
     >
       {renderOptions}
     </Form.Select>
