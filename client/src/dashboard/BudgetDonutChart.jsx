@@ -7,9 +7,10 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 export const data = {
-  labels: ['Auto', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ['Auto', 'Entertainment', 'Rent', 'Restaurant', 'Groceries', 'Utilities'],
   datasets: [
     {
+      datasetIdKey:'budget-chart',
       label: '# of Votes',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
@@ -37,13 +38,31 @@ const BudgetDonutChart = () => {
   
   ChartJS.register(ArcElement, Tooltip, ChartDataLabels);   
   useEffect(()=>{
+
+    return () =>{
+      // ChartJS.destroy()
+      // ChartJS.unregister(ArcElement, Tooltip, ChartDataLabels)
+    }
   },[])
 
   return (
     <div className='donut-chart'>
       <Doughnut 
         data={data} 
-        
+        options={{
+          plugins: {
+              datalabels: {
+                  formatter: function(value, context) {
+                      return context.chart.data.labels[context.dataIndex];
+                  },
+                  color: "white",
+                  font: {
+                    weight: 'bold',
+                    size: '15px'
+                  }
+              }
+          }}
+      }
       />
     </div>
   )
