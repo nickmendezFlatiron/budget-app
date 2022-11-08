@@ -54,6 +54,10 @@ body::-webkit-scrollbar {
 
 /* WIDGETS */
 
+.category-dropdown{
+  max-height: 150px;
+}
+
 @media (min-width: 992px) {
   .max-content{
   display: inline-block;
@@ -75,9 +79,7 @@ body::-webkit-scrollbar {
     margin-right: 5px!important;
     margin-left: 5px!important; 
     
-  }
-
-    
+  } 
 }
 
 @media (max-width: 991.8px){
@@ -89,11 +91,12 @@ body::-webkit-scrollbar {
 }
 
 .dash-transaction-table {
-  max-height: 250px !important;
+  height: 250px !important;
   overflow-y: auto;
 }::-webkit-scrollbar{
   background-color: transparent;;
 }
+
 .dash-transaction-table::-webkit-scrollbar-thumb{
   max-height: 30px !important;
   background-color: rgba(211, 211, 211, 0.246);
@@ -102,9 +105,19 @@ body::-webkit-scrollbar {
 
 .dash-transaction-td {
   border-style : hidden!important;
+  cursor: pointer;
 }
 
 .transparent tbody td{
   background-color: transparent!important;
 }
 
+.goals{
+  list-style: none;
+  
+}
+
+.goals:hover{
+  cursor: pointer;
+  background-color: #323539;
+}

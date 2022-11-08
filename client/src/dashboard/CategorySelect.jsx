@@ -1,10 +1,7 @@
 import React, {useState} from 'react'
 import Form from 'react-bootstrap/Form';
-
-const CategorySelect = () => 
-{
-  const [selectedOption, setSelectedOption] = useState('all');
-  console.log(selectedOption)
+import Dropdown from 'react-bootstrap/Dropdown';
+const CategorySelect = ({setSelectedOption, selectedOption}) => {
   const options = [
     { value: 'all', label: 'All' },
     { value: 'auto', label: 'Auto' },
@@ -13,7 +10,10 @@ const CategorySelect = () =>
     { value: 'rent-utilities', label: 'Rent & Utilities' },
     { value: 'entertainment', label: 'Entertainment' }
   ]; 
-
+  function handleChange(e){
+    setSelectedOption(e.target.value)
+    e.target.blur()
+  }
   const renderOptions = options.map((option) =>{
     return <option value={option.value} key={option.value}>{option.label}</option>
   })
@@ -21,8 +21,10 @@ const CategorySelect = () =>
   return (
     <Form.Select
       size="lg"
-      className="bg-secondary text-warning bg-opacity-25 border-0"
-      onChange={(e)=>{setSelectedOption(e.target.value)}}
+      className="bg-secondary text-warning bg-opacity-25 border-0 category-dropdown"
+      onChange={handleChange}
+      // onFocus={(e)=>e.target.size=3}
+      // onBlur={(e)=>e.target.size=1}
     >
       {renderOptions}
     </Form.Select>

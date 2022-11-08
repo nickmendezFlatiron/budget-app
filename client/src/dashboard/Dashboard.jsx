@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
+// Widgets
 import CategorySelect from './CategorySelect';
 import TransactionTable from './TransactionTable';
 import BudgetDonutChart from './BudgetDonutChart';
+import GoalsWidget from './GoalsWidget';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -14,6 +16,7 @@ import { sampleData } from '../SampleData';
 
 const Dashboard = () => {
   const [timeFrame, setTimeFrame] = useState("Month")
+  const [selectedOption, setSelectedOption] = useState('all');
 
   const handleTimeFrameChange = (val,e) => {
     setTimeFrame(e.target.value)
@@ -43,45 +46,44 @@ const Dashboard = () => {
         <Row className="pt-3" xs={1} md={2}>
           <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start">
             <BudgetDonutChart />
-            {/* <img src="https://via.placeholder.com/300" alt="Chart" className="rounded-circle"/> */}
           </Col>
           <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-md-0 ">
             <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
-              <CategorySelect />
+              <CategorySelect selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
             </div>
             <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-center">Total Expenses</p>
+                <p className="text-warning text-center text-capitalize">{selectedOption} Expenses</p>
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                <p className="text-warning ">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
                 <h1>$2000</h1>
               </Col>
             </div>
             <div className=" rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-center">Total Expenses</p>
+                <p className="text-warning text-center">Total Savings</p>
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                <p className="text-warning">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Income</p>
                 <h1>$2000</h1>
               </Col>
             </div>
           </Col>
         </Row>
-        <Row xs={1} md={2} className=" pb-5 mt-3">
-          <Col className="ps-md-0">
+        <Row xs={1} lg={2} className=" pb-5 mt-4">
+          <Col className="ps-lg-0">
             <div className="widget-margin-small  bg-black bg-opacity-25 rounded-3 ">
-              <h4 className="text-center pt-3 ps-lg-3 text-lg-start text-warning">Transactions</h4>
+              <h4 className="text-center pt-3 ps-lg-3  text-lg-start text-warning text-capitalize">{selectedOption} Transactions</h4>
               <div className="dash-transaction-table ps-lg-3">
                 <TransactionTable /> 
               </div>
             </div>
           </Col>
-          <Col  className="border border-primary">
-          
+          <Col  className="mt-4 mt-lg-0 pe-lg-0">
+            <GoalsWidget selectedOption={selectedOption}/>
           </Col>
         </Row>
       </Container>
