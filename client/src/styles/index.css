@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar {
   background-color: #212529;
   display: none;;
-  scrollbar-width: none; 
+  
 }
 
 .gap-gutter {
@@ -128,8 +128,8 @@ body::-webkit-scrollbar {
 
 .pointer-cursor {
   cursor: pointer;
+  
 }
 .pointer-cursor label {
   cursor: pointer;
 }
-

@@ -23,6 +23,9 @@ const Dashboard = () => {
     const options = {month: 'long', year: 'numeric'};
     return new Intl.DateTimeFormat('en-US', options).format(d)
   }
+
+  const displayTime = timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`;
+
   return (
     <div className='bg-dark text-light pb-5'>
       <Container >
@@ -58,17 +61,17 @@ const Dashboard = () => {
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-capitalize">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Budget</p>
+                <p className="text-warning text-capitalize">{displayTime} Budget</p>
                 <h1>$2000</h1>
               </Col>
             </div>
             <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-center">Total Savings</p>
+                <p className="text-warning text-center">{displayTime} Savings</p>
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-capitalize">{timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`} Income</p>
+                <p className="text-warning text-capitalize">{displayTime} Income</p>
                 <h1>$2000</h1>
               </Col>
             </div>

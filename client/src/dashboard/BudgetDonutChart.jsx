@@ -60,7 +60,9 @@ const BudgetDonutChart = () => {
               plugins: {
                   datalabels: {
                       formatter: function(value, context) {
-                          return context.chart.data.labels[context.dataIndex];
+                          return (
+                            context.chart.data.labels[context.dataIndex]
+                            );
                       },
                       color: `rgba(255, 255, 255, ${labelOpacity})`,
                       font: {
