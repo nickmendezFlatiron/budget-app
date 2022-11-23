@@ -43,15 +43,15 @@ const Dashboard = () => {
               </ToggleButton>
             </ToggleButtonGroup>
           </Col>
-          <Col className="text-center text-md-start order-md-first pt-2 pt-md-0  px-0"> 
-            <h2>{renderDate()}</h2>
+          <Col className="text-center text-md-start order-md-first pt-2 pt-md-0 px-0"> 
+            <h2 className='text-uppercase fw-light '>{renderDate()}</h2>
           </Col>
         </Row>
         <Row className="pt-3" xs={1} md={2} >
           <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start">
             <BudgetDonutChart />
           </Col>
-          <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-3 mt-md-0 ">
+          <Col className="rounded bg-black pe-lg-0 bg-opacity-25 text-center text-lg-start mt-4 mt-md-0 ">
             <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content">  
               <CategorySelect selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
             </div>
