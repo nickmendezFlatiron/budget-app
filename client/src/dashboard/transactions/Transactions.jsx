@@ -17,6 +17,9 @@ const Transactions = () => {
     <div className='bg-dark text-light pb-5'>
       <Container>
         <Row xs={1} sm={1} md={2} className="pt-3">
+          <Col className="text-center text-md-start  py-2 py-md-0 px-0"> 
+            <h2 className='text-uppercase fw-light'>TRANSACTIONS</h2>
+          </Col>
           <Col className="text-center text-md-end px-0"> 
             <ToggleButtonGroup type="checkbox" value={timeFrame} onChange={handleTimeFrameChange} className="">
               <ToggleButton id="week" value="Week">
@@ -29,9 +32,6 @@ const Transactions = () => {
                 Custom
               </ToggleButton>
             </ToggleButtonGroup>
-          </Col>
-          <Col className="text-center text-md-start order-md-first pt-2 pt-md-0 px-0"> 
-            <h2 className='text-uppercase fw-light'>TRANSACTIONS</h2>
           </Col>
         </Row>
       </Container>
