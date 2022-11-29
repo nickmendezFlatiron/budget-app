@@ -34,6 +34,7 @@ const Transactions = () => {
         <TitleDateRange timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange}/>
         <Row className="bg-black bg-opacity-25 rounded py-2 mt-3" xs={1} lg={2}>
           <Col className="rounded" lg={8}>
+            <Row>Time Frame and Category</Row>
             <Row xs={1} md={2}>
               <Col className="bg-black bg-opacity-50 rounded">
                 <TransactionFilters register={register} handleSubmit={handleSubmit} setSelectedCategory={setSelectedCategory}/>
@@ -43,7 +44,7 @@ const Transactions = () => {
               </Col>
             </Row>
             <Row>
-              <Col className="ps-0">
+              <Col className="p-0 pe-lg-3">
                 <div className="transaction-table mt-3 ps-lg-3 bg-opacity-50 bg-black rounded">
                   <h4 className="text-center pt-3 ps-lg-2 text-lg-start text-warning text-capitalize">{selectedCategory} Transactions</h4>
                   <TransactionTable /> 
