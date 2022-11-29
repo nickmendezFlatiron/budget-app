@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import TransactionTable from './TransactionTable';
 import TitleDateRange from '../widgets/TitleDateRange'
-
+import TransactionFilters from './TransactionFilters'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
@@ -20,17 +20,22 @@ const Transactions = () => {
       <Container>
         <TitleDateRange timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange}/>
         <Row className="bg-black bg-opacity-25 rounded py-2 mt-3" xs={1} md={2}>
-          <Col className="bg-secondary bg-opacity-50 rounded">
+          <Col className="bg-secondary bg-opacity-50 rounded" md={8}>
             <Row xs={1} md={2}>
-              <Col  className="p-2 bg-black bg-opacity-50 rounded">
-                Search Filters
+              <Col className="p-2 bg-black bg-opacity-50 rounded">
+                <TransactionFilters />
               </Col>
               <Col  className="p-2 bg-black bg-opacity-50 rounded">
-                fs
+                
               </Col>
             </Row>
+            <Row>
+              <div className="dash-transaction-table mt-3 ps-lg-3 bg-opacity-50 bg-dark rounded">
+                <TransactionTable /> 
+              </div>              
+            </Row>
           </Col>
-          <Col className="bg-secondary bg-opacity-50 rounded">
+          <Col className="bg-secondary bg-opacity-50 rounded" md={4}>
             Hello
           </Col>
         </Row>
