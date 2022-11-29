@@ -18,8 +18,8 @@ const BudgetProgress = () => {
           text={`${percentage}%`} 
           styles={buildStyles({
             pathColor: `rgba(1, 150, 140, ${percentage / 100})`,
-            textColor: 'rgba(1, 150, 140)',
-            trailColor: 'transparent',
+            textColor: '#fbc724',
+            trailColor: `rgb(20, 20, 20)`
           })}
           />
       </div>
@@ -28,3 +28,5 @@ const BudgetProgress = () => {
 }
 
 export default BudgetProgress
+
+// rgba(251, 199, 36, 1)

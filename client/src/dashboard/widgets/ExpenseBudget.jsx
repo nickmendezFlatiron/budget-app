@@ -1,5 +1,5 @@
 import React from 'react'
-
+import BudgetProgress from './BudgetProgress';
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row';
 
@@ -14,7 +14,7 @@ const ExpenseBudget = ({selectedCategory, timeFrame}) => {
 
 
   return (
-      <Row className="bg-black rounded expense-budget">
+      <Row className="bg-black rounded expense-budget pt-2">
         <Col >
           <p className="text-warning text-center text-capitalize">Expenses</p>
           <h1 className='text-center'>${vals.expenses}</h1>
