@@ -32,8 +32,8 @@ const Transactions = () => {
     <div className='bg-dark text-light pb-5'>
       <Container>
         <TitleDateRange timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange}/>
-        <Row className="bg-black bg-opacity-25 rounded py-2 mt-3" xs={1} md={2}>
-          <Col className="rounded" md={8}>
+        <Row className="bg-black bg-opacity-25 rounded py-2 mt-3" xs={1} lg={2}>
+          <Col className="rounded" lg={8}>
             <Row xs={1} md={2}>
               <Col className="bg-black bg-opacity-50 rounded">
                 <TransactionFilters register={register} handleSubmit={handleSubmit} setSelectedCategory={setSelectedCategory}/>
@@ -43,18 +43,22 @@ const Transactions = () => {
               </Col>
             </Row>
             <Row>
-              <div className="dash-transaction-table mt-3 ps-lg-3 bg-opacity-50 bg-black rounded">
-                <h4 className="text-center pt-3 ps-lg-2  text-lg-start text-warning text-capitalize">{selectedCategory} Transactions</h4>
-                <TransactionTable /> 
-              </div>              
+              <Col className="ps-0">
+                <div className="transaction-table mt-3 ps-lg-3 bg-opacity-50 bg-black rounded">
+                  <h4 className="text-center pt-3 ps-lg-2 text-lg-start text-warning text-capitalize">{selectedCategory} Transactions</h4>
+                  <TransactionTable /> 
+                </div>              
+              </Col>
             </Row>
           </Col>
-          <Col className="bg-secondary bg-opacity-50 rounded" md={4}>
-            <Row className="transaction-donut-chart bg-black rounded mx-2">
-              Donut Chart
-            </Row>
-            <Row>
-              <FrequentPurchases />
+          <Col className="bg-secondary bg-opacity-50 mt-3 mt-lg-0 rounded" lg={4}>
+            <Row xs={1} md={2} lg={1}>
+              <Col className="transaction-donut-chart bg-black rounded">
+                  Donut Chart
+              </Col>
+              <Col>
+                <FrequentPurchases />
+              </Col>
             </Row>
           </Col>
         </Row>

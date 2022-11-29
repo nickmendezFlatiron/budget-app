@@ -134,16 +134,24 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
+/* Transactions Page */
+
+.transaction-table {
+  height: 300px !important;
+  overflow-y: auto;
+}::-webkit-scrollbar{
+  background-color: transparent;;
+}
 .select-input {
-  /* border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden; */
   border-color:#212529;
   background-color:#fbc724;
 }
 
 .transaction-donut-chart {
-  width: auto;
-  height: 200px;
+  height: 198px;
+}
+
+.frequent-purchases{
+  max-height: 198px;
+  overflow-y: auto;
 }
