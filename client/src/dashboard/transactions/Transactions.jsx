@@ -21,7 +21,14 @@ const Transactions = () => {
         <TitleDateRange timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange}/>
         <Row className="bg-black bg-opacity-25 rounded py-2 mt-3" xs={1} md={2}>
           <Col className="bg-secondary bg-opacity-50 rounded">
-            Hello
+            <Row xs={1} md={2}>
+              <Col  className="p-2 bg-black bg-opacity-50 rounded">
+                Search Filters
+              </Col>
+              <Col  className="p-2 bg-black bg-opacity-50 rounded">
+                fs
+              </Col>
+            </Row>
           </Col>
           <Col className="bg-secondary bg-opacity-50 rounded">
             Hello
