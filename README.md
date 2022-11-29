@@ -25,4 +25,9 @@ COLORS
 - #fbc724
 - #fbc724
 
+What I learned
+- ChartJS
+- Vite
+
+
 
