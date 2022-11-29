@@ -1,7 +1,7 @@
 import React from 'react'
 import uuid from 'react-uuid'
 
-const GoalsWidget = ({selectedOption}) => {
+const GoalsWidget = ({selectedCategory}) => {
   const goals =[
     {
       date: "11/06/2022",
@@ -71,7 +71,7 @@ const GoalsWidget = ({selectedOption}) => {
   })
   return (
     <div className="widget-margin-small  bg-black bg-opacity-25 rounded-3 ">
-      <h4 className="text-center pt-3 pe-lg-3 text-lg-end text-warning text-capitalize">{selectedOption} Goals</h4>
+      <h4 className="text-center pt-3 pe-lg-3 text-lg-end text-warning text-capitalize">{selectedCategory} Goals</h4>
       <div className="dash-transaction-table ">
         <ul className="ps-0">
          {renderGoals}

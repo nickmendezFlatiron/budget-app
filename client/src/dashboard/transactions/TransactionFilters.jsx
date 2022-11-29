@@ -5,9 +5,9 @@ import CategorySelect from '../CategorySelect'
 
 import Form from 'react-bootstrap/Form';
 
-const TransactionFilters = ({selectedOption, setSelectedOption}) => {
+const TransactionFilters = ({register, handleSubmit, setSelectedCategory}) => {
 
-  const { register, handleSubmit } = useForm();
+  
   const submitForm = (data, e) => {
     e.preventDefault();
     console.log(data)
@@ -24,9 +24,7 @@ const TransactionFilters = ({selectedOption, setSelectedOption}) => {
         placeholder='Keyword search...'
       />
       <CategorySelect 
-        register={register} 
-        setSelectedOption={setSelectedOption} 
-        selectedOption={selectedOption}
+        setSelectedCategory={setSelectedCategory}
       />
     </Form.Group>
    </Form>
