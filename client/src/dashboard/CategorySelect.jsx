@@ -1,8 +1,11 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useLocation } from 'react-router-dom';
 const CategorySelect = ({setSelectedOption, selectedOption}) => {
-  
+
+  const {pathname} = useLocation();
+  const selectSize = pathname === "/transactions" ? "md" : "lg";
   const options = [
     { value: 'all', label: 'All' },
     { value: 'auto', label: 'Auto' },
@@ -11,6 +14,7 @@ const CategorySelect = ({setSelectedOption, selectedOption}) => {
     { value: 'rent-utilities', label: 'Rent & Utilities' },
     { value: 'entertainment', label: 'Entertainment' }
   ]; 
+
   function handleChange(e){
     setSelectedOption(e.target.value)
   }
@@ -20,7 +24,7 @@ const CategorySelect = ({setSelectedOption, selectedOption}) => {
 
   return (
     <Form.Select
-      size="lg"
+      size={selectSize}
       className="bg-secondary text-warning bg-opacity-25 border-0 category-dropdown"
       onChange={handleChange}
     >

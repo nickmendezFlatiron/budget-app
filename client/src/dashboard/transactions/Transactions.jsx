@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import TransactionTable from './TransactionTable';
 import TitleDateRange from '../widgets/TitleDateRange'
 import TransactionFilters from './TransactionFilters'
+
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
@@ -10,7 +11,7 @@ import Container from 'react-bootstrap/Container'
 
 const Transactions = () => {
   const [timeFrame, setTimeFrame] = useState("Month")
-
+  const [selectedOption, setSelectedOption] = useState("all")
   const handleTimeFrameChange = (val,e) => {
     setTimeFrame(e.target.value)
   }
@@ -23,7 +24,7 @@ const Transactions = () => {
           <Col className="bg-secondary bg-opacity-50 rounded" md={8}>
             <Row xs={1} md={2}>
               <Col className="p-2 bg-black bg-opacity-50 rounded">
-                <TransactionFilters />
+                <TransactionFilters selectedOption={selectedOption} setSelectedOption={setSelectedOption}/>
               </Col>
               <Col  className="p-2 bg-black bg-opacity-50 rounded">
                 

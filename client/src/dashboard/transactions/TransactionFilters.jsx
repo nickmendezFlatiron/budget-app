@@ -1,8 +1,11 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
+
+import CategorySelect from '../CategorySelect'
+
 import Form from 'react-bootstrap/Form';
 
-const TransactionFilters = () => {
+const TransactionFilters = ({selectedOption, setSelectedOption}) => {
 
   const { register, handleSubmit } = useForm();
 
@@ -10,7 +13,8 @@ const TransactionFilters = () => {
   return (
    <Form>
     <Form.Group>
-      <Form.Control className='bg-transparent text-light' type="text" placeholder='Keyword search...'/>
+      <Form.Control aria-label="searchbar" className='bg-transparent text-light mb-2' type="text" placeholder='Keyword search...'/>
+      <CategorySelect setSelectedOption={setSelectedOption} selectedOption={selectedOption}/>
     </Form.Group>
    </Form>
   )
