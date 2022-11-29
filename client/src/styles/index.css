@@ -142,3 +142,8 @@ body::-webkit-scrollbar {
   border-color:#212529;
   background-color:#fbc724;
 }
+
+.transaction-donut-chart {
+  width: auto;
+  height: 200px;
+}
