@@ -57,6 +57,14 @@ body::-webkit-scrollbar {
 }
 
 /* WIDGETS */
+.expense-budget {
+  height: fit-content !important;
+}
+
+.budget-progress-chart {
+  height: auto;
+  width: 200px;
+}
 
 .category-dropdown{
   max-height: 150px;

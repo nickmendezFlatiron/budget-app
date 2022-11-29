@@ -14,7 +14,7 @@ const TransactionFilters = ({register, handleSubmit, setSelectedCategory}) => {
   }
 
   return (
-   <Form onSubmit={handleSubmit(submitForm)}>
+   <Form onSubmit={handleSubmit(submitForm)} className="">
     <Form.Group>
       <Form.Control 
         {...register("searchbar")} 

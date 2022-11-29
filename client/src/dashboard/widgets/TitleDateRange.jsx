@@ -4,7 +4,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import { useLocation } from 'react-router-dom'
 
-const TitleDateRange = ({timeFrame, handleTimeFrameChange}) => {
+const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) => {
 
   const {pathname}  = useLocation();
   
@@ -14,7 +14,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange}) => {
     return new Intl.DateTimeFormat('en-US', options).format(d)
   }
 
-  const renderTitle = pathname === "/dashboard" ? renderDate() : pathname.slice(1,pathname.length) ;
+  const renderTitle = pathname === "/dashboard" ? renderDate() : `${selectedCategory} ${pathname.slice(1,pathname.length)}` ;
 
   return (
     <>
