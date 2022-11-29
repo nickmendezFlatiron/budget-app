@@ -133,3 +133,12 @@ body::-webkit-scrollbar {
 .pointer-cursor label {
   cursor: pointer;
 }
+
+.select-input {
+  /* border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden; */
+  border-color:#212529;
+  background-color:#fbc724;
+}

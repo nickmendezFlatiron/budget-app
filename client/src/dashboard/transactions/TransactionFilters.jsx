@@ -13,7 +13,7 @@ const TransactionFilters = ({selectedOption, setSelectedOption}) => {
   return (
    <Form>
     <Form.Group>
-      <Form.Control aria-label="searchbar" className='bg-transparent text-light mb-2' type="text" placeholder='Keyword search...'/>
+      <Form.Control aria-label="searchbar" className='bg-secondary bg-opacity-25 text-warning mb-2 select-input' type="text" placeholder='Keyword search...'/>
       <CategorySelect setSelectedOption={setSelectedOption} selectedOption={selectedOption}/>
     </Form.Group>
    </Form>
