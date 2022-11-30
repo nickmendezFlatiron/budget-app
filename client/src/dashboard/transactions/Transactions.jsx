@@ -37,7 +37,7 @@ const Transactions = () => {
         <Row className="bg-black bg-opacity-25 rounded py-2  mt-3" xs={1} lg={2}>
           <Col className="rounded" lg={8}>
             <Row xs={1} md={1} lg={2} className="p-0 pe-lg-3 ">
-              <Col className="py-2">
+              <Col>
                 <TransactionFilters register={register} handleSubmit={handleSubmit} setSelectedCategory={setSelectedCategory}/>
               </Col>
               <Col className='bg-black rounded expense-budget'>
