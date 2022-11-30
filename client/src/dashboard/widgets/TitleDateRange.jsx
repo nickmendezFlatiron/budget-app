@@ -30,7 +30,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
   
   const renderButtonTitle = renderDate(range?.from) === renderDate(range?.to) ? renderDate(range?.from) : `${renderDate(range.from)} - ${renderDate(range.to)}` ;
   const isRangeSelected = range === undefined ? "Select Day or Range" : renderButtonTitle ;
-  console.log(range)
+  
   let footer =  <Col className="d-flex justify-content-around mt-2">
                   <Button onClick={()=>{setRange({to: today , from: today})}}  variant="secondary" size="sm" className='text-white'>Today</Button>
                   <Button onClick={()=>{setRange({to: today , from: subWeeks(new Date(), 1)})}} variant="secondary" size="sm" className='text-white'>Past Week</Button>
@@ -41,7 +41,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
     <>
       <Row xs={1} sm={1} md={2} className="pt-3">
         <Col className="text-center text-md-start  py-2 py-md-0 px-0"> 
-          <h2 className='text-uppercase fw-light text-secondary'>{renderPageTitle}</h2>
+          <h2 className='text-uppercase  fw-light text-secondary'>{renderPageTitle}</h2>
         </Col>
         <Col className="text-center text-white text-md-end px-0"> 
             <DropDownButton

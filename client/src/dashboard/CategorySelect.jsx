@@ -16,7 +16,6 @@ const CategorySelect = ({setSelectedCategory}) => {
   ]; 
 
   function handleChange(e){
-    console.log(e.target.value)
     setSelectedCategory(e.target.value)
   }
   const renderOptions = options.map((option) =>{

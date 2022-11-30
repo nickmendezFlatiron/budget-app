@@ -18,7 +18,7 @@ const Transactions = () => {
 
   const [timeFrame, setTimeFrame] = useState("Month")
   const [selectedCategory, setSelectedCategory] = useState('all');
-
+  console.lo
   const { register, handleSubmit } = useForm({
     defaultValues: {
       searchbar: "",
@@ -48,7 +48,9 @@ const Transactions = () => {
               <Col className="p-0 pe-lg-3">
                 <div className="transaction-table mt-3 ps-lg-3 bg-opacity-50 bg-black rounded">
                   <h4 className="text-center pt-3 ps-lg-2 text-lg-start text-warning text-capitalize">Transaction History</h4>
-                  <TransactionTable /> 
+                  <div className="dash-transaction-table ps-lg-3">
+                    <TransactionTable /> 
+                  </div>
                 </div>              
               </Col>
             </Row>

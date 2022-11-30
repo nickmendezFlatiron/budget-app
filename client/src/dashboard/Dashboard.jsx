@@ -25,11 +25,11 @@ const Dashboard = () => {
   }
 
   const displayTime = timeFrame === "Custom" ? timeFrame : `${timeFrame}ly`;
-
+  const smallText = <small className="text-muted">({selectedCategory})</small>
   return (
     <div className='bg-dark text-light pb-5'>
       <Container >
-        <TitleDateRange timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange} />
+        <TitleDateRange selectedCategory={selectedCategory} timeFrame={timeFrame} handleTimeFrameChange={handleTimeFrameChange} />
         <Row className="pt-3" xs={1} md={2} >
           <Col className="rounded bg-black bg-opacity-25 text-center text-lg-start">
             <BudgetDonutChart />
@@ -40,21 +40,21 @@ const Dashboard = () => {
             </div>
             <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-center text-capitalize">{selectedCategory} Expenses</p>
+                <p className="text-warning text-center text-capitalize">Expenses</p>
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-capitalize">{displayTime} Budget</p>
+                <p className="text-warning text-capitalize">Budget</p>
                 <h1>$2000</h1>
               </Col>
             </div>
             <div className="glow rounded rounded-3 mb-3 d-flex row row-auto bg-light bg-opacity-25 max-content p-2">  
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-center">{displayTime} Savings</p>
+                <p className="text-warning text-center">Savings</p>
                 <h1>$1300.24</h1>
               </Col>
               <Col xs={6} lg={`auto`}>
-                <p className="text-warning text-capitalize">{displayTime} Income</p>
+                <p className="text-warning text-capitalize">Income</p>
                 <h1>$2000</h1>
               </Col>
             </div>
@@ -63,14 +63,14 @@ const Dashboard = () => {
         <Row xs={1} lg={2} className=" pb-5 mt-4">
           <Col className="ps-lg-0">
             <div className="widget-margin-small  bg-black bg-opacity-25 rounded-3 ">
-              <h4 className="text-center pt-3 ps-lg-3  text-lg-start text-warning text-capitalize">{selectedCategory} Transactions</h4>
+              <h4 className="text-center pt-3 ps-lg-3  text-lg-start text-warning text-capitalize">Transaction History {smallText}</h4>
               <div className="dash-transaction-table ps-lg-3">
                 <TransactionTable /> 
               </div>
             </div>
           </Col>
           <Col  className="mt-4 mt-lg-0 pe-lg-0">
-            <GoalsWidget selectedCategory={selectedCategory}/>
+            <GoalsWidget selectedCategory={selectedCategory} smallText={smallText}/>
           </Col>
         </Row>
       </Container>

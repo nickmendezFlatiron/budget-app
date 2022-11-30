@@ -4,8 +4,9 @@ import Table from 'react-bootstrap/Table'
 const FrequentPurchases = () => {
   
   return (
-      <Row className="text-center mt-0 mt-lg-3 bg-black rounded frequent-purchases">
-        <h4 className='pt-2'>Frequent Purchases</h4>
+      <Row className="text-center mt-0 mt-lg-3 bg-black rounded">
+        <h4 className='pt-2 text-warning'>Frequent Purchases</h4>
+        <div className="frequent-purchases ps-lg-3">
         <Table hover variant='dark' className='transparent text-start '>
           <thead >
               <td className='ps-2'>Name</td>
@@ -40,6 +41,7 @@ const FrequentPurchases = () => {
             </tr>
           </tbody>
         </Table>
+        </div>
       </Row>
   )
 }
