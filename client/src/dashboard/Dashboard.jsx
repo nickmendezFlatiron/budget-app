@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useForm } from "react-hook-form";
 // Widgets
 import CategorySelect from './CategorySelect';
-import TransactionTable from './transactions/TransactionTable';
+import TransactionTable from '../transactions/TransactionTable';
 import BudgetDonutChart from './BudgetDonutChart';
 import GoalsWidget from './goals/GoalsWidget';
 import TitleDateRange from './widgets/TitleDateRange';

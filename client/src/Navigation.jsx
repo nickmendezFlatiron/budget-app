@@ -26,7 +26,7 @@ const Navigation = () => {
             </Nav>
             <Nav>
               <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
-                  <NavDropdown.Item href="#action/3.1">Account Settings</NavDropdown.Item>
+                  <NavDropdown.Item href="/account">Account Settings</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
                   </NavDropdown.Item>

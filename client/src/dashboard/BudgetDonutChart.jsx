@@ -74,12 +74,12 @@ const BudgetDonutChart = () => {
           }
           />
         </Col>
-        <Col md="auto" >
+        {/* <Col md="auto" >
           <div className="pointer-cursor">
             <input type="checkbox" id="toggle-labels" className="pointer-cursor" checked={isLabels} onChange={()=>{toggleLabels(!isLabels)}}/>
             <label htmlFor="toggle-labels" value="Labels" className='ms-1 fs-5 '>Labels</label>
           </div>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   )

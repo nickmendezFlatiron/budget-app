@@ -39,9 +39,9 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
   
   return (
     <>
-      <Row xs={1} sm={1} md={2} className="pt-3">
-        <Col className="text-center text-md-start  py-2 py-md-0 px-0"> 
-          <h2 className='text-uppercase  fw-light text-secondary'>{renderPageTitle}</h2>
+      <Row xs={1} sm={1} md={2} className="">
+        <Col className="text-center text-md-start px-0"> 
+          <h2 className='text-uppercase fs-1 fw-light text-secondary'>{renderPageTitle}</h2>
         </Col>
         <Col className="text-center text-white text-md-end px-0"> 
             <DropDownButton

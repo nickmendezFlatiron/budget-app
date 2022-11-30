@@ -14,14 +14,14 @@ const ExpenseBudget = ({selectedCategory, timeFrame}) => {
 
 
   return (
-      <Row className="bg-black rounded expense-budget pt-2">
-        <Col >
+      <Row className="bg-black rounded ">
+        <Col>
           <p className="text-warning text-center text-capitalize">Expenses</p>
           <h1 className='text-center'>${vals.expenses}</h1>
         </Col>
         <Col>
           <p className="text-warning text-capitalize text-center">Budget</p>
-          <h1 className='text-center'>${vals.budget}</h1>
+          <h1 className='text-center '>${vals.budget}</h1>
         </Col>
       </Row>
     
