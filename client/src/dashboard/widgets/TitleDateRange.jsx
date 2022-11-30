@@ -25,8 +25,8 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
       to: today
   }
   const [range, setRange] = useState(defaultRange)
-  const renderTitle = selectedCategory === "all" ? pathname.slice(1) : selectedCategory ;
-  
+  const renderPageTitle = selectedCategory === "all" ? pathname.slice(1) : selectedCategory ;
+  const renderButtonTitle = range.from === range.to ? renderDate(range.from) : `${renderDate(range.from)} - ${renderDate(range.to)}` ;
   let footer =  <Col className="d-flex justify-content-around mt-2">
                   <Button onClick={()=>{setRange({to: today , from: today})}}  variant="secondary" size="sm" className='text-white'>Today</Button>
                   <Button onClick={()=>{setRange({to: today , from: subWeeks(new Date(), 1)})}} variant="secondary" size="sm" className='text-white'>Past Week</Button>
@@ -37,13 +37,12 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
     <>
       <Row xs={1} sm={1} md={2} className="pt-3">
         <Col className="text-center text-md-start  py-2 py-md-0 px-0"> 
-          <h2 className='text-uppercase fw-light text-secondary'>{renderTitle}</h2>
+          <h2 className='text-uppercase fw-light text-secondary'>{renderPageTitle}</h2>
         </Col>
-        <Col className="text-center text-warning text-md-end px-0"> 
-            <DropDownButton 
-              variant="primary" 
+        <Col className="text-center text-white text-md-end px-0"> 
+            <DropDownButton
               menuVariant="dark"
-              title={`${renderDate(range.from)} - ${renderDate(range.to)}`}
+              title={renderButtonTitle}
               >
                 <DayPicker
                   mode="range"
