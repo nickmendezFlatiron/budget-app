@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import uuid from 'react-uuid';
 import LinkedAccount from './LinkedAccount'
-
+import AccountsCollapse from './AccountsCollapse'
 import Container from 'react-bootstrap/Container'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import Button from 'react-bootstrap/Button'
@@ -59,14 +59,13 @@ const Account = ({user}) => {
               </Form.Group>
             </Form>
             <Col className='mt-3 text-primary'>
-              <h5>Linked Accounts</h5>
-              <Col className="text-secondary">
-                {renderAccounts}
-              </Col>
+                <AccountsCollapse>
+                  {renderAccounts}
+                </AccountsCollapse>
             </Col>
-            <div className='mt-3'>
+            <div className='pt-2'>
               <ToggleButton     
-              className="me-3 "         
+              className="me-3"         
               id="toggle-check"
               size='sm'
               type="checkbox"
