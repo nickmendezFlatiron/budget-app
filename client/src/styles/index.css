@@ -163,14 +163,23 @@ body::-webkit-scrollbar {
 }
 
 .underline-text-input{
-  border-color: #fbc724;
+  border-color: #a4a4a4;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
   border-radius: 0;
+  border-width: 2px;
 }
 .underline-text-input:focus{
+  color: black;
   outline: none;
   box-shadow: none;
+  border-color: #01968d;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-radius: 0;
+  border-width: 2px;
 }
