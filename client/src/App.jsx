@@ -11,8 +11,29 @@ import Account from './account/Account';
 import './styles/app.scss'
 import './styles/index.css'
 
+import avatar from './assets/avatar.png';
 function App() {
-
+  const user = {
+    email: 'test@test.com',
+    fullName: "Nick Mendez",
+    username: 'Admin007',
+    password: "test123",
+    avatar: avatar,
+    linkedAccounts: [
+      { 
+        institution: "Bank of America",
+        accessToken: "access-token-BoA"
+      },
+      { 
+        institution: "Chase",
+        accessToken: "access-token-chase"
+      },
+      { 
+        institution: "American Express",
+        accessToken: "access-token-AEX"
+      },
+    ]
+  }
   return (
       <>
         <Navigation />
@@ -20,7 +41,7 @@ function App() {
             <Route path='/' element={<Homepage />} exact/>
             <Route path='/dashboard' element={<Dashboard />} exact/>
             <Route path='/transactions' element={<Transactions />} exact/>
-            <Route path='/account' element={<Account />} exact/>
+            <Route path='/account' element={<Account user={user}/>} exact/>
           </Routes>
         <Footer />
       </>

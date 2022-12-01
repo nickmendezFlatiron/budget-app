@@ -161,3 +161,16 @@ body::-webkit-scrollbar {
   max-height: 23vh;
   overflow-y: auto;
 }
+
+.underline-text-input{
+  border-color: #fbc724;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  border-radius: 0;
+}
+.underline-text-input:focus{
+  outline: none;
+  box-shadow: none;
+}
