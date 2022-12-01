@@ -23,10 +23,11 @@ const Navigation = () => {
             <Nav className="me-auto">
               <Nav.Link href="/dashboard">Dashboard</Nav.Link>
               <Nav.Link href="/transactions">Transactions</Nav.Link>
+              <Nav.Link href="/budget">Budget</Nav.Link>
             </Nav>
             <Nav>
               <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
-                  <NavDropdown.Item href="/account">Account Settings</NavDropdown.Item>
+                  <NavDropdown.Item href="/account">My Profile</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
                   </NavDropdown.Item>

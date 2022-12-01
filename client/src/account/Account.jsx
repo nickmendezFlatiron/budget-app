@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
 const Account = ({user}) => {
-  const [isDisabled, toggleDisabled] = useState(false)
+  const [isDisabled, toggleDisabled] = useState(true)
 
   const saveButton = <Button size='sm'>Update</Button>
   const pencil = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
@@ -23,12 +23,12 @@ const Account = ({user}) => {
                     </svg>
   const renderAccounts = user?.linkedAccounts.map((account) => <LinkedAccount isDisabled={isDisabled} account={account} key={uuid()}/>)
   return (
-    <div className="bg-dark text-white ">
+    <div className="bg-dark text-white vh-85">
       <Container className="py-4">
-        <Row className="text-primary pt-3">
+        <Row className="text-primary pt-3 text-center text-md-start">
           <h1>{!isDisabled ? "Edit" : null } {user.username}'s Profile</h1>
         </Row>
-        <Row xs={1} md={2} className="bg-secondary bg-opacity-25 rounded glow p-5">
+        <Row xs={1} md={2} className="bg-secondary bg-opacity-25 rounded glow py-60 p-5">
           <Col className="text-center mb-3 mb-md-0">
             <label className={`rounded-circle p-auto m-auto ${ !isDisabled ? "pointer-hover": null} position-relative`}>
               <Image 
@@ -46,7 +46,7 @@ const Account = ({user}) => {
               </div>
             </label>
           </Col>
-          <Col className="py-3 bg-black bg-opacity-50 rounded rounded-3 shadow">
+          <Col className="py-3 px-5 bg-black bg-opacity-50 rounded rounded-3 shadow ">
             <Form>
               <Form.Group>
                 <Form.Control disabled type="text" placeholder="Name here..." className="underline-text-input bg-transparent w-auto text-secondary ps-0" value={user.username}/>

@@ -7,6 +7,7 @@ import Dashboard from './dashboard/Dashboard';
 import Footer from './Footer'
 import Transactions from './transactions/Transactions'
 import Account from './account/Account';
+import Budget from "./budget/Budget"
 
 import './styles/app.scss'
 import './styles/index.css'
@@ -42,6 +43,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} exact/>
             <Route path='/transactions' element={<Transactions />} exact/>
             <Route path='/account' element={<Account user={user}/>} exact/>
+            <Route path='/budget' element={<Budget />} exact/>
           </Routes>
         <Footer />
       </>

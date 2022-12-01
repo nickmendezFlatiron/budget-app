@@ -193,6 +193,11 @@ body::-webkit-scrollbar {
 
 /* Utilities */
 
+.py-60 {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
 .pointer-cursor {
   cursor: pointer;
 }
@@ -202,3 +207,8 @@ body::-webkit-scrollbar {
   cursor: pointer;
   opacity: .8;
 }
+
+.vh-85{
+  min-height: 85vh;
+}
+
