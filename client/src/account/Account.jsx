@@ -29,9 +29,14 @@ const Account = ({user}) => {
           <h1>{!isDisabled ? "Edit" : null } {user.username}'s Profile</h1>
         </Row>
         <Row xs={1} md={2} className="bg-secondary bg-opacity-25 rounded glow p-5">
-          <Col className="text-center">
-            <label className="rounded-circle p-auto m-auto position-relative">
-              <Image className='glow rounded-circle goals' fluid src={user.avatar} alt="user avatar image" />
+          <Col className="text-center mb-3 mb-md-0">
+            <label className={`rounded-circle p-auto m-auto ${ !isDisabled ? "pointer-hover": null} position-relative`}>
+              <Image 
+                className='glow' 
+                fluid src={user.avatar} 
+                roundedCircle={true}
+                alt="user avatar image" 
+              />
               <input type="file" hidden disabled={isDisabled}/>
               <div 
                 hidden={isDisabled}

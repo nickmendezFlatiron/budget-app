@@ -198,6 +198,7 @@ body::-webkit-scrollbar {
 }
 
 .pointer-hover:hover {
-  transition: ease-in .01s;
+  transition: linear .1s;
   cursor: pointer;
+  opacity: .8;
 }
