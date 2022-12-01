@@ -132,10 +132,6 @@ body::-webkit-scrollbar {
   background-color: #323539;
 }
 
-.pointer-cursor {
-  cursor: pointer;
-  
-}
 .pointer-cursor label {
   cursor: pointer;
 }
@@ -181,4 +177,27 @@ body::-webkit-scrollbar {
   border-bottom-style: groove;
   border-radius: 0;
   border-width: 2px;
+}
+
+/* Account (user profile) Page */
+
+.account-avatar-overlay { 
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -230%);
+  -ms-transform: translate(-50%, -500%);
+  text-align: center;
+}
+
+/* Utilities */
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.pointer-hover:hover {
+  transition: ease-in .01s;
+  cursor: pointer;
 }
