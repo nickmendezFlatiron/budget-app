@@ -10,8 +10,8 @@ const GoalsCard = ({goal}) => {
 
   const categoryText = <small className="text-muted">Category</small>
   return (
-    <Col className="bg-dark rounded rounded-4 my-1 p-2">
-        <Row>
+    <Col className="bg-dark rounded rounded-4 my-1 ">
+        <Row className="p-1 ">
           <Col xs="auto" className="text-start">
             <GoalsCardChart/>
           </Col>

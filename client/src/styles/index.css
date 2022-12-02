@@ -200,6 +200,18 @@ body::-webkit-scrollbar {
   max-width: 70px;
 }
 
+.goal-container {
+  max-height: 45vh;
+  overflow-y: auto;
+}
+
+.goal-container::-webkit-scrollbar {
+  background-color: #212529;
+  display: none;;
+  
+}
+
+
 /* Utilities */
 
 .py-60 {

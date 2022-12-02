@@ -23,16 +23,22 @@ const Budget = () => {
             <Row>Expenses:</Row>
           </Col>
         </Row>
-        <Row xs={1} lg={2} className='bg-secondary mt-2 py-2'>
+        <Row xs={1} lg={2} className='bg-black mt-2 py-2'>
           <Col>
             col
           </Col>
-          <Col className="">
+          <div>
+          <h2 className='text-warning'>Goals</h2>
+          <Col className="goal-container">
+            <GoalsCard />
+            <GoalsCard />
+            <GoalsCard />
             <GoalsCard />
             <GoalsCard />
             <GoalsCard />
             <GoalsCard />
           </Col>
+          </div>
         </Row>
       </Container>
     </div>
