@@ -41,7 +41,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
     <>
       <Row xs={1} sm={1} md={2} className="">
         <Col className="text-center text-md-start px-0"> 
-          <h2 className='text-uppercase fs-1 fw-light text-secondary'>{renderPageTitle}</h2>
+          <h2 className='text-uppercase title fw-light text-secondary'>{renderPageTitle}</h2>
         </Col>
         <Col className="text-center text-white text-md-end px-0"> 
             <DropDownButton

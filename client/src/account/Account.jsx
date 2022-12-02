@@ -22,11 +22,12 @@ const Account = ({user}) => {
                       <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
                     </svg>
   const renderAccounts = user?.linkedAccounts.map((account) => <LinkedAccount isDisabled={isDisabled} account={account} key={uuid()}/>)
+  
   return (
     <div className="bg-dark text-white vh-85">
       <Container className="py-4">
         <Row className="text-primary pt-3 text-center text-md-start">
-          <h1>{!isDisabled ? "Edit" : null } {user.username}'s Profile</h1>
+          <h1 className='ps-0 text-uppercase title fw-light text-secondary'> {!isDisabled ? "Edit" : null } My Profile</h1>
         </Row>
         <Row xs={1} md={2} className="bg-secondary bg-opacity-25 rounded glow py-60 p-5">
           <Col className="text-center mb-3 mb-md-0">
@@ -49,7 +50,7 @@ const Account = ({user}) => {
           <Col className="py-3 px-5 bg-black bg-opacity-50 rounded rounded-3 shadow ">
             <Form>
               <Form.Group>
-                <Form.Control disabled type="text" placeholder="Name here..." className="underline-text-input bg-transparent w-auto text-secondary ps-0" value={user.username}/>
+                <Form.Control disabled type="text" placeholder="Name here..." className="border-0 fs-3  underline-text-input bg-transparent w-auto text-secondary py-0 ps-0" value={user.username}/>
               </Form.Group>
               <Form.Group>
                 <Form.Control disabled={isDisabled} type="text" placeholder="Name here..." className="underline-text-input bg-transparent w-auto text-secondary mt-2 ps-0" value={user.fullName}/>
@@ -71,7 +72,7 @@ const Account = ({user}) => {
               type="checkbox"
               variant='outline-primary'
               checked={!isDisabled}
-              onChange={(e) => toggleDisabled(!e.currentTarget.checked)}
+              onChange={(e) => {toggleDisabled(!e.currentTarget.checked) }}
               >
               {pencil} Edit Profile
               </ToggleButton>
