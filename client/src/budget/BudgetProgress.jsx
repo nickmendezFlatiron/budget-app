@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
-const BudgetProgress = () => {
+const BudgetProgress = ({data, children}) => {
   const [percentage, setPercentage] = useState(0)
 
   useEffect(()=> {
-    setPercentage(40)
+    setPercentage(parseInt(((data?.expenses / data?.budget) * 100) ))
   },[])
   
   return (
     <div>
-      <h2 className='text-warning'>Budget</h2>
+      {children}
       <ProgressBar 
         now={percentage} 
         label={`${percentage}%`}

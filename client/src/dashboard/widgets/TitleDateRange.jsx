@@ -45,6 +45,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
         </Col>
         <Col className="text-center text-white text-md-end px-0"> 
             <DropDownButton
+              className="titledaterange"
               menuVariant="dark"
               title={isRangeSelected}
               >
