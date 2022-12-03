@@ -30,7 +30,7 @@ const GoalForm = () => {
         onClick={() => setOpen(!open)}
         aria-controls="linked-accounts"
         aria-expanded={open}
-        className="text-warning pointer-hover hightlight-hover"
+        className="text-warning pointer-hover hightlight-hover w-auto "
       >
         Goals {renderSign}
     </h2>

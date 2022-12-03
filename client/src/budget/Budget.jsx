@@ -1,8 +1,8 @@
 import React from 'react'
 import GoalsCard from './GoalsCard';
-import TransactionFilters from '../transactions/TransactionFilters';
 import GoalForm from './GoalForm';
-
+import BudgetProgress from './BudgetProgress';
+import TransactionFilters from '../transactions/TransactionFilters';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -28,22 +28,19 @@ const Budget = () => {
         </Row>
         <Row xs={1} lg={2} className='bg-black mt-2 py-2'>
           <Col className="">
-         
+            <BudgetProgress />
           </Col>
           <div>
-            <div className=''>
-                <GoalForm />
-               
-            </div>
-          <Col className="goal-container">
-            <GoalsCard />
-            <GoalsCard />
-            <GoalsCard />
-            <GoalsCard />
-            <GoalsCard />
-            <GoalsCard />
-            <GoalsCard />
-          </Col>
+            <GoalForm />   
+            <Col className="goal-container">
+              <GoalsCard />
+              <GoalsCard />
+              <GoalsCard />
+              <GoalsCard />
+              <GoalsCard />
+              <GoalsCard />
+              <GoalsCard />
+            </Col>
           </div>
         </Row>
       </Container>
