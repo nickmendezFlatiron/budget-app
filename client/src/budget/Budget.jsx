@@ -12,6 +12,7 @@ import TransactionFilters from '../transactions/TransactionFilters';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -41,11 +42,18 @@ const Budget = () => {
         <Row xs={1} lg={2} className='bg-black mt-2 py-2'>
           <Col className="">
             <BudgetProgress data={data}>
-              <div className='d-flex justify-content-between align-items-end'>
+              <div className='d-flex justify-content-between align-items-center'>
                 <h2 className='text-warning'>
                   Budget 
                   <small className='text-secondary fw-light '> {timeFrame}</small>
                   </h2>
+                <Button 
+                  className='ms-auto mt-1 mb-3 me-1'
+                  variant='outline-primary'  
+                  size="sm"
+                >
+                    Edit
+                </Button>
                 <h3 className='text-secondary'>${data.budget}</h3>
                 
               </div>

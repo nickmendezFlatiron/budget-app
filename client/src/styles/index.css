@@ -217,7 +217,7 @@ body::-webkit-scrollbar {
   border-radius: 10px;
   background: linear-gradient(to bottom left, #4e4e4e71 60%, #151515cc 70%);
   padding: 1pc;
-  box-shadow: 4px 4px 6px rgba(255, 255, 255, 0.142);
+
   backdrop-filter: blur(4.7px);
   -webkit-backdrop-filter: blur(4.7px);
 }
