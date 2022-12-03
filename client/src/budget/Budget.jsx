@@ -1,6 +1,7 @@
 import React from 'react'
 import GoalsCard from './GoalsCard';
 import TransactionFilters from '../transactions/TransactionFilters';
+import GoalForm from './GoalForm';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,23 +13,28 @@ const Budget = () => {
   return (
     <div className='bg-dark text-light vh-85'>
       <Container className='py-4'>
-        <Row className="bg-black p-2 rounded text-center">
-          <Col  className='bg-dark mx-2'>
+        <Row xs={1} md={2} className="bg-black p-2 rounded text-center">
+          <Col  className='bg-dark '>
             PIE CHART HERE 
           </Col>
-          <Col  className='bg-dark mx-2'>
+          <Col  className='bg-dark '>
+            <Row>
             <h1>Budget: </h1>
-            <Row>Expenses:</Row>
-            <Row>Expenses:</Row>
-            <Row>Expenses:</Row>
+            <h4>Expenses</h4>
+            <h4>Income</h4>
+            <h4>Balance</h4>
+            </Row>
           </Col>
         </Row>
         <Row xs={1} lg={2} className='bg-black mt-2 py-2'>
-          <Col>
-            col
+          <Col className="">
+         
           </Col>
           <div>
-          <h2 className='text-warning'>Goals</h2>
+            <div className=''>
+                <GoalForm />
+               
+            </div>
           <Col className="goal-container">
             <GoalsCard />
             <GoalsCard />
