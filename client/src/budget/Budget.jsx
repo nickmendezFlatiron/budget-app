@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+import BudgetDonutChart from '../dashboard/BudgetDonutChart';
 import TitleDateRange from '../dashboard/widgets/TitleDateRange';
 import GoalsCard from './GoalsCard';
 import GoalForm from './GoalForm';
@@ -25,21 +26,22 @@ const Budget = () => {
   }
   const budgetAmount = <small className="text-muted">Amount</small>
   const percentage = parseInt(data.expenses / data.budget * 100)
+
   return (
     <div className='bg-dark text-light vh-85'>
-      <Container className='py-4'>
+      <Container className='pb-4'>
         <TitleDateRange timeFrame={timeFrame} selectedCategory={selectedCategory} setTimeFrame={setTimeFrame}/>
         <Row xs={1} md={2} className="bg-black p-2 rounded text-center">
-          <Col  className='bg-dark '>
-            PIE CHART HERE: Total Expenses vs set budget
+          <Col  className=''>
+            <BudgetDonutChart />
           </Col>
-          <Col  className='bg-dark '>
+          <Col  className=''>
             <Row>
               Category breakdown and chart legend here
             </Row>
           </Col>
         </Row>
-        <Row xs={1} lg={2} className='bg-black mt-2 py-2'>
+        <Row xs={1} lg={2} className='bg-black mt-2 py-2 rounded rounded-3'>
           <Col className="">
             <BudgetProgress data={data}>
               <div className='d-flex justify-content-between align-items-center'>
@@ -58,9 +60,11 @@ const Budget = () => {
                 
               </div>
             </BudgetProgress>
-            <div className='mt-2'>
+            <div className=''>
               <CreditCardCollapse>
-                <Row xs={1} lg={2} className="g-2">
+                <Row xs={1} lg={2} className="g-2 credit-card-container">
+                  <AccountSummaryCard />
+                  <AccountSummaryCard />
                   <AccountSummaryCard />
                   <AccountSummaryCard />
                   <AccountSummaryCard />

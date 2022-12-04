@@ -10,7 +10,7 @@ const BudgetProgress = ({data, children}) => {
   },[])
   
   return (
-    <div>
+    <div className='pb-2'>
       {children}
       <ProgressBar 
         now={percentage} 

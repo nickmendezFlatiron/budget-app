@@ -202,7 +202,7 @@ body::-webkit-scrollbar {
 }
 
 .goal-container {
-  max-height: 336px;
+  max-height: 365px;
   overflow-y: auto;
 }
 
@@ -217,9 +217,14 @@ body::-webkit-scrollbar {
   border-radius: 10px;
   background: linear-gradient(to bottom left, #4e4e4e71 60%, #151515cc 70%);
   padding: 1pc;
-
+  border: 2px outset rgb(113, 113, 113);
   backdrop-filter: blur(4.7px);
   -webkit-backdrop-filter: blur(4.7px);
+}
+
+.credit-card-container {
+  max-height: 312px;
+  overflow-y: auto;
 }
 /* Utilities */
 
