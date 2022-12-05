@@ -52,7 +52,7 @@ const BudgetDonutChart = () => {
   return (
     <div >
       <Row xs={1} className="justify-content-center">
-        <Col className='donut-chart px-0'>   
+        <Col className='donut-chart px-0 glow rounded-circle'>   
           <Doughnut 
             ref={chartRef}
             data={data} 

@@ -215,6 +215,7 @@ body::-webkit-scrollbar {
 /* Budget Tabs */
 .nav-tabs button.nav-link {
   color:#fbc724;
+  font-size: 20px;
 }
 .nav-tabs button.nav-link.active {
   color: #01968d;

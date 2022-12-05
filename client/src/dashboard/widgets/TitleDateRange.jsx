@@ -39,7 +39,7 @@ const TitleDateRange = ({timeFrame, handleTimeFrameChange, selectedCategory}) =>
   
   return (
     <>
-      <Row xs={1} sm={1} md={2} className="">
+      <Row xs={1} sm={1} md={2} className="mb-2">
         <Col className="text-center text-md-start px-0"> 
           <h2 className='text-uppercase title fw-light text-secondary'>{renderPageTitle}</h2>
         </Col>
