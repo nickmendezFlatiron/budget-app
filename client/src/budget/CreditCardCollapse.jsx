@@ -16,14 +16,14 @@ const CreditCardCollapse = ({children}) => {
   const renderChevron = !open ? chevron : chevronUp;
   return (
     <>  
-       <h5
+       <h2
         onClick={() => setOpen(!open)}
         aria-controls="linked-accounts"
         aria-expanded={open}
-        className="text-primary pointer-hover"
+        className="text-warning pointer-hover"
       >
         Linked Accounts {renderChevron}
-      </h5>
+      </h2>
       <Collapse in={open}>
         <div id="linked-accounts">
          {children}

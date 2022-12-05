@@ -212,6 +212,24 @@ body::-webkit-scrollbar {
   
 }
 
+/* Budget Tabs */
+.nav-tabs button.nav-link {
+  color:#fbc724;
+}
+.nav-tabs button.nav-link.active {
+  color: #01968d;
+  background-color: transparent;;
+  border-color: transparent;
+}
+.nav-tabs button.nav-link:hover {
+  color: #01968d;
+  background-color: transparent;;
+  border-color: #6c757d;
+}
+
+ul.mb-3.nav.nav-tabs {
+  border-color: #6c757d;
+}
 /* Credit Card Design */
 .credit-card{
   border-radius: 10px;

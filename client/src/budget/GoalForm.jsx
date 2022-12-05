@@ -26,17 +26,8 @@ const GoalForm = () => {
   }
   return (
     <>
-    <h2
-        onClick={() => setOpen(!open)}
-        aria-controls="linked-accounts"
-        aria-expanded={open}
-        className="text-warning pointer-hover hightlight-hover w-auto "
-      >
-        Goals {renderSign}
-    </h2>
-    <Collapse in={open}>
       <div id="example-collapse-text">
-        <p>Create A New Goal</p>
+        <p className=''>Create A New Goal</p>
           <Form onSubmit={handleCreateGoal} className="bg-black">
             <Row>     
                 <Col xs={12} md={6}>
@@ -65,7 +56,7 @@ const GoalForm = () => {
             </Col>
           </Form>
       </div>
-    </Collapse>
+
   </>
   )
 }

@@ -5,6 +5,7 @@ import TitleDateRange from '../dashboard/widgets/TitleDateRange';
 import GoalsCard from './GoalsCard';
 import GoalForm from './GoalForm';
 
+import BudgetTabs from  './BudgetTabs'
 import CreditCardCollapse from './CreditCardCollapse';
 import AccountSummaryCard from './AccountSummaryCard';
 import BudgetProgress from './BudgetProgress';
@@ -20,6 +21,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const Budget = () => {
   const [timeFrame, setTimeFrame] = useState("Month")
   const [selectedCategory, setSelectedCategory] = useState('all');
+  
   const data = {
     budget: 2000,
     expenses: 1233
@@ -37,44 +39,15 @@ const Budget = () => {
           </Col>
           <Col  className=''>
             <Row>
-              Category breakdown and chart legend here
+              Category breakdown and chart legend here. How much of your expenses are taking up your budget.
             </Row>
           </Col>
         </Row>
         <Row xs={1} lg={2} className='bg-black mt-2 py-2 rounded rounded-3'>
           <Col className="">
-            <BudgetProgress data={data}>
-              <div className='d-flex justify-content-between align-items-center'>
-                <h2 className='text-warning'>
-                  Budget 
-                  <small className='text-secondary fw-light '> {timeFrame}</small>
-                  </h2>
-                <Button 
-                  className='ms-auto mt-1 mb-3 me-1'
-                  variant='outline-primary'  
-                  size="sm"
-                >
-                    Edit
-                </Button>
-                <h3 className='text-secondary'>${data.budget}</h3>
-                
-              </div>
-            </BudgetProgress>
-            <div className=''>
-              <CreditCardCollapse>
-                <Row xs={1} lg={2} className="g-2 credit-card-container">
-                  <AccountSummaryCard />
-                  <AccountSummaryCard />
-                  <AccountSummaryCard />
-                  <AccountSummaryCard />
-                  <AccountSummaryCard />
-                  <AccountSummaryCard />
-                </Row>
-              </CreditCardCollapse>
-            </div>
+            <BudgetTabs data={data} timeFrame={timeFrame}/>   
           </Col>
           <div>
-            <GoalForm />   
             <Col className="goal-container">
               <GoalsCard />
               <GoalsCard />

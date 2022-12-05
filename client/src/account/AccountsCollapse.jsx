@@ -15,7 +15,7 @@ const AccountsCollapse = ({children}) => {
         onClick={() => setOpen(!open)}
         aria-controls="linked-accounts"
         aria-expanded={open}
-        className="text-primary pointer-hover"
+        className="text-primary pointer-hover mt-2"
       >
         Linked Accounts {chevron}
       </h5>
