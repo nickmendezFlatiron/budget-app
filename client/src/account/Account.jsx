@@ -78,6 +78,10 @@ const Account = ({user}) => {
               </ToggleButton>
               {!isDisabled ? saveButton : null}
             </div>
+
+            <Button
+            className="mt-2"
+            >Link an Account</Button>
           </Col>
         </Row>
       </Container>

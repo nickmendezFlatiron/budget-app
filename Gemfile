@@ -8,7 +8,6 @@ gem "rails", "~> 7.0.4"
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.1"
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -20,7 +19,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem "debug", platforms: %i[ mri mingw x64_mingw ]
+   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -28,3 +28,7 @@ group :development do
   # gem "spring"
 end
 
+gem 'active_model_serializers', "~> 0.10.13"
+gem 'graphql', '~> 2.0', '>= 2.0.15'
+gem 'bcrypt', '~> 3.1', '>= 3.1.18'
+gem 'plaid'

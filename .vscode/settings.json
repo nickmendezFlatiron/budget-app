@@ -1,4 +1,7 @@
 {
   "editor.linkedEditing": true,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
