@@ -1,10 +1,10 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
+
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
-
+import Button from 'react-bootstrap/Button';
 import textLogo from "./assets/text-logo.png";
 
 const Navigation = () => {
@@ -13,6 +13,27 @@ const Navigation = () => {
     e.stopPropagation();
   }
 
+  const userDropdown =    <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
+                            <NavDropdown.Item href="/account">My Profile</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                              Another action
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3" >
+                            <Form>
+                              <Form.Check 
+                                type="switch"
+                                id="display-mode"
+                                label="Dark Mode"
+                                onClick={handleDisplayMode}
+                              />
+                            </Form>
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                              Logout
+                            </NavDropdown.Item>
+                          </NavDropdown>
+  const loginButton = <Button  variant='secondary'>Login</Button>
   return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='px-4 py-1 header-bg fs-5' sticky="top">
           <Navbar.Brand href="/">
@@ -26,26 +47,7 @@ const Navigation = () => {
               <Nav.Link href="/budget">Budget</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
-                  <NavDropdown.Item href="/account">My Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3" >
-                  <Form>
-                    <Form.Check 
-                      type="switch"
-                      id="display-mode"
-                      label="Dark Mode"
-                      onClick={handleDisplayMode}
-                    />
-                  </Form>
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Logout
-                  </NavDropdown.Item>
-                </NavDropdown>
+            {loginButton}
             </Nav>
           </Navbar.Collapse>
         

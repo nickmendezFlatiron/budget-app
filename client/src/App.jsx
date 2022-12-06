@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-
+import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import {ReactQueryDevtools} from '@tanstack/react-query'
 import Navigation from './Navigation';
 import Homepage from './home/Homepage';
 import Dashboard from './dashboard/Dashboard';
@@ -14,6 +15,8 @@ import './styles/index.css'
 
 import avatar from './assets/avatar.png';
 function App() {
+  const client = new QueryClient()
+
   const user = {
     email: 'test@test.com',
     fullName: "Nick Mendez",
@@ -37,6 +40,7 @@ function App() {
   }
   return (
       <>
+      <QueryClientProvider client={client}>
         <Navigation />
           <Routes>
             <Route path='/' element={<Homepage />} exact/>
@@ -45,7 +49,8 @@ function App() {
             <Route path='/account' element={<Account user={user}/>} exact/>
             <Route path='/budget' element={<Budget />} exact/>
           </Routes>
-        <Footer />
+      </QueryClientProvider>
+      <Footer />
       </>
   )
 }
