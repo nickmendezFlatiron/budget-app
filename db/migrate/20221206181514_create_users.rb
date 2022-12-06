@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :username
       t.string :full_name
       t.string :email
-      t.string :account_type
+      t.string :account_type , :default => 'free'
       t.string :password_digest
 
       t.timestamps
