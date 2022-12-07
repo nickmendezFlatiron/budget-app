@@ -231,6 +231,9 @@ body::-webkit-scrollbar {
 ul.mb-3.nav.nav-tabs {
   border-color: #6c757d;
 }
+
+/* Signup form */
+
 /* Credit Card Design */
 .credit-card{
   border-radius: 10px;
@@ -297,4 +300,8 @@ background-color: #272a2d;
   color: white;
   border-color: #fbc724;
   font-size: 18px;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to right, transparent 45%, #01968c4d, #01968d ) !important;
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import textLogo from "./assets/text-logo.png";
 
 const Navigation = () => {
-
+  const navigate = useNavigate()
   function handleDisplayMode(e){
     e.stopPropagation();
   }
@@ -33,7 +34,7 @@ const Navigation = () => {
                               Logout
                             </NavDropdown.Item>
                           </NavDropdown>
-  const loginButton = <Button  variant='secondary'>Login</Button>
+  const loginButton = <Button onClick={() => navigate('/login')}  variant='secondary'>Login</Button>
   return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='px-4 py-1 header-bg fs-5' sticky="top">
           <Navbar.Brand href="/">
