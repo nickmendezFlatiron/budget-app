@@ -16,4 +16,4 @@ const useFetchPost = async ({url,body }) => {
   return data
 }
 
-export default useFetch
+export default useFetchPost
