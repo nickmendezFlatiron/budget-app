@@ -18,34 +18,12 @@ import useAuthenticate from './hooks/useAuthenticate';
 import './styles/app.scss'
 import './styles/index.css'
 
-import avatar from './assets/avatar.png';
 function App() {
  
   const client = new QueryClient()
   const [user, setUser] = useState(null)
   const [isAuthenticated, setAuthenticated] = useState(null)
   
-  const testUser = {
-    email: 'test@test.com',
-    fullName: "Nick Mendez",
-    username: 'Admin007',
-    password: "test123",
-    avatar: avatar,
-    linkedAccounts: [
-      { 
-        institution: "Bank of America",
-        accessToken: "access-token-BoA"
-      },
-      { 
-        institution: "Chase",
-        accessToken: "access-token-chase"
-      },
-      { 
-        institution: "American Express",
-        accessToken: "access-token-AEX"
-      },
-    ]
-  }
 
   useEffect(()=>{
    useAuthenticate()
@@ -69,7 +47,8 @@ function App() {
                 <Route path='/' element={<Homepage isAuthenticated={isAuthenticated}/>} exact/>
                 <Route path='/dashboard' element={<Dashboard />} exact/>
                 <Route path='/transactions' element={<Transactions />} exact/>
-                <Route path='/account' element={<Account user={testUser}/>} exact/>
+                <Route path='/account/:username' element={<Account user={user}/>} exact>   
+                </Route>
                 <Route path='/budget' element={<Budget />} exact/>
               </Routes>
             <ReactQueryDevtools />

@@ -32,11 +32,12 @@ const SignIn = () => {
       } else {
         setUser(data)
         setAuthenticated(true)
+        navigate('/account')
       }
     }) 
   }
 
-  isAuthenticated ? navigate('/') : null;
+  if (isAuthenticated === true) {return navigate('/')} 
 
   return (
     <div className='bg-dark'>

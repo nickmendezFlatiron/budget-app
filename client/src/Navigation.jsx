@@ -26,7 +26,7 @@ const Navigation = ({isAuthenticated, user, setUser, setAuthenticated}) => {
   }
 
   const userDropdown =    <NavDropdown title={`${user?.username}`} id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
-                            <NavDropdown.Item href="/account">My Profile</NavDropdown.Item>
+                            <NavDropdown.Item href={`/account/${user?.username}`}>My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                               Another action
                             </NavDropdown.Item>
