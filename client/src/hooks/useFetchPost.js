@@ -1,8 +1,6 @@
-import React from 'react'
-
 const useFetchPost = async ({url,body }) => {
 
-  const res = await fetch(url,
+  const res = await fetch(`/api${url}`,
     {
       method: "POST",
       headers: {
@@ -11,9 +9,8 @@ const useFetchPost = async ({url,body }) => {
       body: JSON.stringify(body)
     }
     )
-
     const data = await res.json()
-  return data
+    return data
 }
 
 export default useFetchPost

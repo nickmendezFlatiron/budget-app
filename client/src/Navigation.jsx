@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import useLogout from './hooks/useLogout';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,13 +9,23 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import textLogo from "./assets/text-logo.png";
 
-const Navigation = () => {
+const Navigation = ({isAuthenticated, user, setUser, setAuthenticated}) => {
+
   const navigate = useNavigate()
   function handleDisplayMode(e){
     e.stopPropagation();
   }
 
-  const userDropdown =    <NavDropdown title="Username" id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
+  const handleLogout = () => {
+    useLogout().then(data=> {
+      if(data.ok){
+        setUser(null)
+        setAuthenticated(false)
+      }
+    })
+  }
+
+  const userDropdown =    <NavDropdown title={`${user?.username}`} id="collasible-nav-dropdown" menuVariant='dark' rootCloseEvent='click' align="end">
                             <NavDropdown.Item href="/account">My Profile</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                               Another action
@@ -30,11 +41,14 @@ const Navigation = () => {
                             </Form>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item onClick={handleLogout}>
                               Logout
                             </NavDropdown.Item>
                           </NavDropdown>
   const loginButton = <Button onClick={() => navigate('/login')}  variant='secondary'>Login</Button>
+
+  const renderButton = isAuthenticated ? userDropdown : loginButton;
+
   return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='px-4 py-1 header-bg fs-5' sticky="top">
           <Navbar.Brand href="/">
@@ -48,7 +62,7 @@ const Navigation = () => {
               <Nav.Link href="/budget">Budget</Nav.Link>
             </Nav>
             <Nav>
-            {loginButton}
+            {renderButton}
             </Nav>
           </Navbar.Collapse>
         

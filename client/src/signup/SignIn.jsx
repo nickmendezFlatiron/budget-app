@@ -1,6 +1,8 @@
-import React,{useState} from 'react';
-import {useLocation} from 'react-router-dom';
-import {useForm, Controller} from 'react-hook-form'
+import React,{useState, useContext} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {useForm} from 'react-hook-form'
+import useFetchPost from '../hooks/useFetchPost';
+import { LoginContext } from '../context/LoginContext';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -8,23 +10,34 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const SignIn = () => {
+  const navigate =useNavigate();
   const {pathname} = useLocation()
   const [display, setDisplay] = useState(pathname)
   const {reset ,register, handleSubmit, formState:{errors}} = useForm()
-
+  const {user, setUser, isAuthenticated, setAuthenticated} = useContext(LoginContext)
   function handleChangeForm(){
     reset()
     display === '/login' ? setDisplay("/signup") : setDisplay("/login");
   }
 
   const renderTitle = display === '/login' ? "Log In" : "Sign Up"
-  const renderOther =  display === '/login' ? " Click here to create an account." : "Have an account? Click here to log in."
+  const renderOther =  display === '/login' ? "Click here to create an account." : "Have an account? Click here to log in."
   const isRequired =  display === '/login' ? false : true;
 
   const handleSubmitForm = (data, e) => {
-    e.preventDefault();
-   console.log(data)
+    e.preventDefault()
+    useFetchPost({url:display, body: data}).then(data => {
+      if (data?.errors) {
+        console.log(data.errors)
+      } else {
+        setUser(data)
+        setAuthenticated(true)
+      }
+    }) 
   }
+
+  isAuthenticated ? navigate('/') : null;
+
   return (
     <div className='bg-dark'>
       <Container className="text-white rounded  pt-3">
