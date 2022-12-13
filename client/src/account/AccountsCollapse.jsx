@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import useGetLinkToken from '../hooks/plaid-hooks/useGetLinkToken'
 import Collapse from 'react-bootstrap/Collapse';
 import Button from 'react-bootstrap/Button';
 
@@ -15,10 +16,8 @@ const AccountsCollapse = ({children}) => {
                   </svg>
 
   const handlePlaidConnection = async () => {
-    const response = await fetch('/api/plaid/create_link_token',{method: 'POST'});
-    const {link_token} = await response.json();
-    setToken(link_token);
-    console.log(link_token);
+    const linkToken = await useGetLinkToken()
+    console.log(linkToken)
   }      
   return (
     <>  

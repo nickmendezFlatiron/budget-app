@@ -3,8 +3,6 @@ class PlaidController < ApplicationController
   configuration.server_index = Plaid::Configuration::Environment["sandbox"]
   configuration.api_key['PLAID-CLIENT-ID'] = Rails.application.credentials.dig(:plaid, :client_id) 
   configuration.api_key['PLAID-SECRET'] = Rails.application.credentials.dig(:plaid, :sandbox_secret)
-  configuration.api_key['Plaid-Version'] = '2020-09-14'
-  configuration.api_key['Plaid-Version'] = '2020-09-14'
   
   api_client = Plaid::ApiClient.new(
     configuration
