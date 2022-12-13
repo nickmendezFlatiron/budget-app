@@ -32,7 +32,7 @@ const SignIn = () => {
       } else {
         setUser(data)
         setAuthenticated(true)
-        navigate('/account')
+        navigate(`/account/${data.username}`)
       }
     }) 
   }
