@@ -30,4 +30,15 @@ class PlaidController < ApplicationController
     end
   end
 
+  def exchange
+    if current_user 
+      request = Plaid::ItemPublicTokenExchangeRequest.new(
+        {
+          public_token: params["public_token"]
+        }
+      )
+      response = client.item_public_token_exchange(request)
+    end
+  end
+
 end

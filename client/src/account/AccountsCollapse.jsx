@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { usePlaidLink, PlaidLink } from 'react-plaid-link';
+import { usePlaidLink } from 'react-plaid-link';
 
 import useGetLinkToken from '../hooks/plaid-hooks/useGetLinkToken'
+import useExchangeToken from '../hooks/plaid-hooks/useExchangeToken';
+
 import Collapse from 'react-bootstrap/Collapse';
 import Button from 'react-bootstrap/Button';
 
@@ -27,12 +29,12 @@ const AccountsCollapse = ({children}) => {
   },[])
   
   const  PlaidLinkOptions = {
-    onSuccess: (public_token, metadata) => {console.log({public_token, metadata})},
-    onExit: (err, metadata) => {console.log({err, metadata})},
-    onEvent: (eventName, metadata) => {console.log({eventName, metadata})},
+    onSuccess: (public_token, metadata) => {useExchangeToken(public_token, metadata)},
+    onExit: (err, metadata) => {console.log("exit" ,{err, metadata})},
+    onEvent: (eventName, metadata) => {console.log("event", {eventName, metadata})},
     token: token
   };
-
+  
   const {  open, ready } = usePlaidLink(PlaidLinkOptions);
   return (
     <>  
@@ -41,6 +43,7 @@ const AccountsCollapse = ({children}) => {
         aria-controls="linked-accounts"
         aria-expanded={openList}
         className="text-primary pointer-hover mt-2"
+        disabled={!ready}
       >
         Linked Accounts {chevron}
       </h5>
