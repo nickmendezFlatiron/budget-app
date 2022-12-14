@@ -12,7 +12,6 @@ class PlaidController < ApplicationController
   
   def create
     if current_user 
-      
       client_user_id = current_user.id
       request = Plaid::LinkTokenCreateRequest.new(
         {
@@ -23,8 +22,7 @@ class PlaidController < ApplicationController
           language: "en",
           redirect_uri: PLAID_REDIRECT_URI
         }
-      )
-      
+      )  
       response = @@client.link_token_create(request)
       render json: response, status: :ok
     else 

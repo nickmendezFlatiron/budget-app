@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy';
 
   post 'plaid/create_link_token', to: 'plaid#create';
+  post 'plaid/create_link_token', to: 'plaid#create';
   # root "articles#index"
 end
