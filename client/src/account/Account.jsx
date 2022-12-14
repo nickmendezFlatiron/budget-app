@@ -6,12 +6,12 @@ import LinkedAccount from './LinkedAccount'
 import AccountsCollapse from './AccountsCollapse'
 import Container from 'react-bootstrap/Container'
 import ToggleButton from 'react-bootstrap/ToggleButton'
+import SuccessToast from './SuccessToast';
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-
 import avatar from '../assets/avatar.png';
 
 const Account = ({user, isAuthenticated}) => {
@@ -34,6 +34,7 @@ const Account = ({user, isAuthenticated}) => {
   return (
     <div className="bg-dark text-white vh-85">
       <Container className="py-4">
+        <SuccessToast />
         <Row className="text-primary pt-3 text-center text-md-start">
           <h1 className='ps-0 text-uppercase title fw-light text-secondary'> {!isDisabled ? "Edit" : null } My Profile</h1>
         </Row>

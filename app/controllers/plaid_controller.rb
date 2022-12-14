@@ -37,7 +37,20 @@ class PlaidController < ApplicationController
           public_token: params["public_token"]
         }
       )
-      response = client.item_public_token_exchange(request)
+      response = @@client.item_public_token_exchange(request)
+      name = params["metadata"]["accounts"].map {|account| account["name"]}
+      
+      # institution, token, balance if possible, name
+      current_user.linked_accounts.create!({
+        token: response.access_token,
+        institution: params["metadata"]["institution"]["name"],
+        unique_item: response.item_id ,
+        name: name.join("/")
+      })
+      
+      render json: {success: "Account Connected Successfully" , institution: params["metadata"]["institution"]["name"], name: name.join("/")}, status: :ok
+    else 
+      render json: {errors: ["Unable to exchange and save token. Please try again."]}, status: :unprocessable_entity
     end
   end
 

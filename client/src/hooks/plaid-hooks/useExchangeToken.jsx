@@ -1,6 +1,6 @@
 const useExchangeToken = async (public_token, metadata) => {
   console.log(metadata)
-  const response = await fetch('/api/plaid/exchange_public_token',{
+  const exchange = await fetch('/api/plaid/exchange_public_token',{
     method: 'POST',
     body: JSON.stringify({public_token,metadata}),
     headers: {
@@ -8,9 +8,9 @@ const useExchangeToken = async (public_token, metadata) => {
     }
   })
 
-  const accessToken = await response.json()
-  console.log(accessToken)
-  return accessToken
+  const response = await exchange.json()
+  console.log(response)
+  return response
 }
 
 export default useExchangeToken;
