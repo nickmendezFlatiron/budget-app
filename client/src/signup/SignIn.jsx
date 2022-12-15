@@ -1,6 +1,7 @@
 import React,{useState, useContext} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import {useForm} from 'react-hook-form'
+import {useQuery} from '@tanstack/react-query';
 import useFetchPost from '../hooks/useFetchPost';
 import { LoginContext } from '../context/LoginContext';
 import Container from 'react-bootstrap/Container';

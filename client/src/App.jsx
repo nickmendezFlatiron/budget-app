@@ -1,7 +1,7 @@
 import React,{useState, useContext, useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import { LoginContext } from './context/LoginContext';
-import { useQuery, QueryClient, QueryClientProvider} from '@tanstack/react-query';
+import { useQuery, useMutation} from '@tanstack/react-query';
 import {ReactQueryDevtools} from '@tanstack/react-query-devtools'
 
 import Navigation from './Navigation';
@@ -19,15 +19,17 @@ import './styles/app.scss'
 import './styles/index.css'
 
 function App() {
- 
-  const queryClient = new QueryClient({
-    defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    }
-  }})
   const [user, setUser] = useState(null)
   const [isAuthenticated, setAuthenticated] = useState(null)
+ 
+  const { isLoading, isError, data, error } = useQuery({
+    refetchOnWindowFocus: false,
+    queryKey: ['authenticate'],
+    queryFn: useAuthenticate,
+    onError: (error) => {
+      setAuthenticated(false)
+    }
+  })
   
 
   useEffect(()=>{
@@ -41,11 +43,10 @@ function App() {
     }
   })
   },[])
-
+  // console.log({isError, error})
   return (
       <>
         <LoginContext.Provider value={{user, setUser, isAuthenticated, setAuthenticated}}>
-          <QueryClientProvider client={queryClient}>
             <Navigation isAuthenticated={isAuthenticated} user={user} setAuthenticated={setAuthenticated} setUser={setUser}/>
               <Routes>
                 <Route path='/login' element={<SignIn />} exact/>
@@ -57,7 +58,6 @@ function App() {
                 <Route path='/budget' element={<Budget />} exact/>
               </Routes>
             <ReactQueryDevtools />
-          </QueryClientProvider>
         </LoginContext.Provider>
         <Footer />
       </>
