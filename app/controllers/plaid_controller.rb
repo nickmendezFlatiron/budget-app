@@ -38,15 +38,17 @@ class PlaidController < ApplicationController
         }
       )
       response = @@client.item_public_token_exchange(request)
-      name = params["metadata"]["accounts"].map {|account| account["name"]}
+      byebug
       
-      # institution, token, balance if possible, name
       current_user.linked_accounts.create!({
+        # institution, token, balance if possible, name
         token: response.access_token,
-        institution: params["metadata"]["institution"]["name"],
         unique_item: response.item_id ,
-        name: name.join("/")
-      })
+        institution: params["metadata"]["institution"]["name"]
+        })
+      
+      params["metadata"]["accounts"].map do |account|
+      end
       
       render json: {success: "Account Connected Successfully" , institution: params["metadata"]["institution"]["name"], name: name.join("/")}, status: :ok
     else 

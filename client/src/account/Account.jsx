@@ -16,6 +16,7 @@ import avatar from '../assets/avatar.png';
 
 const Account = ({user, isAuthenticated}) => {
   const [isDisabled, toggleDisabled] = useState(true)
+  const [showToast, toggleShowToast] = useState(false)
   const navigate = useNavigate()
   const {username} = useParams()
   
@@ -34,7 +35,7 @@ const Account = ({user, isAuthenticated}) => {
   return (
     <div className="bg-dark text-white vh-85">
       <Container className="py-4">
-        <SuccessToast />
+        <SuccessToast showToast={showToast} toggleShowToast={toggleShowToast}/>
         <Row className="text-primary pt-3 text-center text-md-start">
           <h1 className='ps-0 text-uppercase title fw-light text-secondary'> {!isDisabled ? "Edit" : null } My Profile</h1>
         </Row>
@@ -69,7 +70,7 @@ const Account = ({user, isAuthenticated}) => {
               </Form.Group>
             </Form>
             <Col className='mt-3 text-primary'>
-                <AccountsCollapse>
+                <AccountsCollapse toggleShowToast={toggleShowToast}>
                   {renderAccounts}
                 </AccountsCollapse>
             </Col>

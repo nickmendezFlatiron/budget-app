@@ -7,7 +7,7 @@ import useExchangeToken from '../hooks/plaid-hooks/useExchangeToken';
 import Collapse from 'react-bootstrap/Collapse';
 import Button from 'react-bootstrap/Button';
 
-const AccountsCollapse = ({children}) => {
+const AccountsCollapse = ({children, toggleShowToast}) => {
   const [openList, setOpenList] = useState(true);
   const [token, setToken] = useState(null)
 
