@@ -46,7 +46,7 @@ class PlaidController < ApplicationController
         unique_item: response.item_id ,
         institution: params["metadata"]["institution"]["name"]
         })
-      
+      # create an account in institution_accounts model for each account associated with the linked institution 
       params["metadata"]["accounts"].map do |account|
       end
       

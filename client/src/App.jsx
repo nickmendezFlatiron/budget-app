@@ -20,7 +20,7 @@ import './styles/index.css'
 
 function App() {
  
-  const client = new QueryClient()
+  const queryClient = new QueryClient()
   const [user, setUser] = useState(null)
   const [isAuthenticated, setAuthenticated] = useState(null)
   
@@ -40,7 +40,7 @@ function App() {
   return (
       <>
         <LoginContext.Provider value={{user, setUser, isAuthenticated, setAuthenticated}}>
-          <QueryClientProvider client={client}>
+          <QueryClientProvider client={queryClient}>
             <Navigation isAuthenticated={isAuthenticated} user={user} setAuthenticated={setAuthenticated} setUser={setUser}/>
               <Routes>
                 <Route path='/login' element={<SignIn />} exact/>
