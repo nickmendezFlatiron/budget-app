@@ -10,7 +10,10 @@ const useFetchPost = async ({url,body }) => {
     }
     )
     const data = await res.json()
-    return data
+    if(!res.ok){
+      throw new Error(data.errors) 
+     }
+     return data
 }
 
 export default useFetchPost

@@ -1,7 +1,7 @@
 import React,{useState, useContext} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import {useForm} from 'react-hook-form'
-import {useQuery} from '@tanstack/react-query';
+import {useQuery, useMutation} from '@tanstack/react-query';
 import useFetchPost from '../hooks/useFetchPost';
 import { LoginContext } from '../context/LoginContext';
 import Container from 'react-bootstrap/Container';
@@ -16,6 +16,20 @@ const SignIn = () => {
   const [display, setDisplay] = useState(pathname)
   const {reset ,register, handleSubmit, formState:{errors}} = useForm()
   const {user, setUser, isAuthenticated, setAuthenticated} = useContext(LoginContext)
+
+  const sendInfo = useMutation({
+    mutationKey: ["user"],
+    mutationFn: useFetchPost,
+    onSuccess: (data) => {
+      console.log(data)
+      setUser(data)
+      setAuthenticated(true)
+      navigate(`/account/${data?.username}`)
+    },
+    onError: (error) =>{
+      console.log(sendInfo.error)
+    }
+  })
   function handleChangeForm(){
     reset()
     display === '/login' ? setDisplay("/signup") : setDisplay("/login");
@@ -27,15 +41,7 @@ const SignIn = () => {
 
   const handleSubmitForm = (data, e) => {
     e.preventDefault()
-    useFetchPost({url:display, body: data}).then(data => {
-      if (data?.errors) {
-        console.log(data.errors)
-      } else {
-        setUser(data)
-        setAuthenticated(true)
-        navigate(`/account/${data.username}`)
-      }
-    }) 
+    sendInfo.mutate({url:display, body:data})
   }
 
   if (isAuthenticated === true) {return navigate('/')} 
@@ -79,13 +85,16 @@ const SignIn = () => {
                     }})} className="mb-3 underline-text-input bg-transparent text-white" type="password" placeholder="Password Confirmation (must match)..." />}
               </Form.Group>
               <Row>
+                Errors List Here
+              </Row>
+              <Row>
                 <Button type="submit" size="lg" className="mt-2 text-white fw-bolder rounded-5" variant='primary'>{renderTitle}</Button>
                 <Button onClick={handleChangeForm} className="mt-2 text-white border-0 rounded-5" variant='outline-dark'>{renderOther}</Button>
               </Row>
             </Form>
           </Col>  
           <Col className="rounded rounded-4">
-          
+                    
           </Col>
         </Row>
       </Container>

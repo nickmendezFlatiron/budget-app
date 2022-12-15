@@ -21,6 +21,7 @@ const Navigation = ({isAuthenticated, user, setUser, setAuthenticated}) => {
       if(data.ok){
         setUser(null)
         setAuthenticated(false)
+        navigate("/")
       }
     })
   }
