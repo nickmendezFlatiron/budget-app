@@ -38,8 +38,9 @@ const Account = ({user, isAuthenticated}) => {
 
   const renderAccounts = accounts.data?.map((account) => <LinkedAccount isDisabled={isDisabled} account={account} key={uuid()}/>)
   const renderButtonText = isDisabled ? " Edit Profile" : " Cancel" ;
-  if (isAuthenticated === false) {navigate("/")}
   const loadAccounts = accounts.isLoading ? <Spinner animation="border" variant="primary" /> : renderAccounts ;
+  
+  if (isAuthenticated === false) {navigate("/")}
   return (
     <div className="bg-dark text-white vh-85">
       <Container className="py-4">

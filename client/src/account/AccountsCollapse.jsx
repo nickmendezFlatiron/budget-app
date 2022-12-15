@@ -52,7 +52,7 @@ const AccountsCollapse = ({children, toggleShowToast}) => {
          {children}
          <Button
           size=""
-          className="ms-0 ps-0  border-0 text-light"
+          className="ms-0 ps-1 border-0 text-light"
           variant='outline-dark'
           onClick={() => open()}
             >{account} Connect a Financial Account</Button>
