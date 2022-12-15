@@ -20,7 +20,12 @@ import './styles/index.css'
 
 function App() {
  
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient({
+    defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    }
+  }})
   const [user, setUser] = useState(null)
   const [isAuthenticated, setAuthenticated] = useState(null)
   
